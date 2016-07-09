@@ -1,11 +1,12 @@
 <div class="container">
     <div class="topbar">
         <div class="logo"><h1><a href="index.html"><img src="images/logo.png" alt="" /></a></h1></div>
+        <a id="complex"></a>
         <div class="rheader">
             <!--<a href="#" data-modal-id="login">Login</a>-->
-            <a ng-click="showLogInUser()" >Login</a>
-            <!--<a ng-click="open()" >Login</a>-->
-            <a href="#" data-modal-id="register">Register</a>
+            <!--<a ng-click="showLogInUser()" >Login</a>-->
+            <a href ng-click="showComplex()">LogIn</a>
+            <a href ng-click="showReg()">Register</a>
             {{name}}
         </div>
     </div>
