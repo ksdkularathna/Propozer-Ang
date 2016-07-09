@@ -1,16 +1,23 @@
 /**
- * Created by Tarun on 6/17/2016.
+ * Created by Tarun on 6/17/2016. , 'UserValidation'
  */
-var app = angular.module('propozerApp', []); //'ngRoute','ui.bootstrap',''ngAnimate'
+var app = angular.module('sampleapp', ['angularModalService', 'ngAnimate', 'ngRoute', 'UserValidation']);
 
+ app.config(['$routeProvider', function($routeProvider) {
+     $routeProvider.when('/', {
+         templateUrl: '../index.html'
 
+     }).when('/myProfile', {
+         templateUrl: 'template/myProfile.html',
+         controller: 'myProfileCtrl'
+     })
+     .when("/search/:gender/:city/:edu/:minAge/:maxAge", {
+         controller: "searchController",
+         templateUrl: "template/searchAll.html"
+     });
+     
+     // otherwise({
+     //     redirectTo: '/'
+     // });
 
-// app.config(function($RouterProvide){
-//     $RouterProvide.when('/',{
-//         controller:'indexCtrl',
-//         templateUrl:'index.html'
-//     }
-//
-//     )
-//
-// });
+ }]);
