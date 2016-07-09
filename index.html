@@ -1,126 +1,98 @@
 <!DOCTYPE html>
-<html ng-app="propozerApp">
+<html lang="en" ng-app="sampleapp">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Dave Kerr">
     <title>Propozer</title>
     <script type="text/javascript" src="js/html5.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
-    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
+    <!-- jQuery, from CDN. -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <!-- Boostrap, from CDN. -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
     <!-- ALL CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/media.css">
     <!-- ALL SCRIPT -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>-->
     <script type="text/javascript" src="js/all-style.js"></script>
+    <!-- Angular, from CDN. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+
+    <!-- Angular Modal Service, the library we're demoing. -->
+    <script src="lib/angular-modal-service.js"></script>
+
+    <!-- Source for our sample app. -->
+    <script src="app/app.js"></script>
+    <script src="controller.js"></script>
+    <script src="searchController.js"></script>
+    <script src="complex/complexcontroller.js"></script>
+    <script src="complex/complexcontroller1.js"></script>
+    <script src="complex/myProfileCtrl.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+    <!--<style>-->
+        <!--body {-->
+            <!--padding-top: 50px;-->
+        <!--}-->
+        <!--.starter-template {-->
+            <!--padding: 40px 15px;-->
+            <!--text-align: center;-->
+        <!--}-->
+        <!--.sample {-->
+            <!--padding: 40px 15px;-->
+        <!--}-->
+    <!--</style>-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
+
 <body>
-
 <div id="main" >
-    <section id="mainbanner" ng-include="'template/partial/header_before_logIn.html'" ng-controller="HeaderCtrl">
-        <!--none as header before logIn-->
+    <div ng-controller="HeaderCtrl">
+    <section id="mainbanner"  ng-include="'template/partial/header_before_logIn.html'" ng-show = "IsVisibleBeforeLogin">
+        <!--known as header before logIn   ng-show = "IsVisibleBeforeLogin"     -->
     </section>
+        <section id="mainbanner" class="header-non-bg" ng-show = "IsVisibleAfterLogin">
+    <header id="headerpart" ng-include="'template/partial/header_after_logIn.html'" >
+        <!--known as header after logIn    ng-show = "IsVisibleAfterLogin"-->
+        </header>
+        </section>
+    </div>
 
-    <section id="steps">
-        <div class="container">
-            <h1 class="title">Find your better half in Just 3 Steps</h1>
-            <ul class="step">
-                <li>
-                    <div class="cir icon1"></div>
-                    <h3>Step 1</h3>
-                    <p>Check Attitude.<br/>(No Photos)</p>
-                </li>
-                <li>
-                    <div class="cir icon2"></div>
-                    <h3>Step 2</h3>
-                    <p>Check Apperance<br/>Both Should Agree.</p>
-                </li>
-                <li>
-                    <div class="cir icon3"></div>
-                    <h3>Step 3</h3>
-                    <p>Chat & get to<br/>know more</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="members">
-        <div class="container">
-            <h1 class="title">Have a Look at Our Members</h1>
-            <div class="slider-part">
-                <div id="owl-demo" class="owl-carousel">
-                    <div class="item">
-                        <figure><img src="images/member-photo.png" alt="" /></figure>
-                        <article>“I am 27 years old. I am a simple, honest, family oriented person like travelling, reading, movies and music. I like to enjoy each moment in my life.  I studied in a famous girl's school in Colmbo My father is retired now and my mother is a clerk. I have only one elder sister and she is married. I have completed my degree & post graduate degree in IT field."</article>
-                    </div>
-                    <div class="item">
-                        <figure><img src="images/member-photo.png" alt="" /></figure>
-                        <article>“I am 27 years old. I am a simple, honest, family oriented person like travelling, reading, movies and music. I like to enjoy each moment in my life.  I studied in a famous girl's school in Colmbo My father is retired now and my mother is a clerk. I have only one elder sister and she is married. I have completed my degree & post graduate degree in IT field."</article>
-                    </div>
-                    <div class="item">
-                        <figure><img src="images/member-photo.png" alt="" /></figure>
-                        <article>“I am 27 years old. I am a simple, honest, family oriented person like travelling, reading, movies and music. I like to enjoy each moment in my life.  I studied in a famous girl's school in Colmbo My father is retired now and my mother is a clerk. I have only one elder sister and she is married. I have completed my degree & post graduate degree in IT field."</article>
-                    </div>
-                    <div class="item">
-                        <figure><img src="images/member-photo.png" alt="" /></figure>
-                        <article>“I am 27 years old. I am a simple, honest, family oriented person like travelling, reading, movies and music. I like to enjoy each moment in my life.  I studied in a famous girl's school in Colmbo My father is retired now and my mother is a clerk. I have only one elder sister and she is married. I have completed my degree & post graduate degree in IT field."</article>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="steps" class="privacy">
-        <div class="container">
-            <h1 class="title">Propozer Protects Privacy</h1>
-            <ul class="step">
-                <li>
-                    <div class="cir icon1"></div>
-                    <h3>1</h3>
-                    <p>Photos will<br/>not Displayed</p>
-                </li>
-                <li>
-                    <div class="cir icon2"></div>
-                    <h3>2</h3>
-                    <p>Contacts will not<br/>be shared</p>
-                </li>
-                <li>
-                    <div class="cir icon3"></div>
-                    <h3>3</h3>
-                    <p>Each profile is<br/>Reviewed & Verified</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="started">
-        <div class="container">
-            <article><p>Your story is waiting to happen!</p><a href="#">Gets Started</a></article>
-        </div>
-    </section>
-
-    <section id="propozer">
-        <div class="container">
-            <div class="propozer-icon"><img src="images/propozer-icon.png" alt="" /></div>
-            <article>Propozer is a unique, innovative and professional matchmaking service provider in Sri Lanka . We offer you the best possible matches of grooms and brides according to your wish through our expanding proprietary network. As a premium matchmaking service provider, our database includes a selected group of reliable candidates who will meet your exact criteria at it best. Propozer will definitely help you to find someone special whom you're compatible with and the one who can build a solid and everlasting relationship with you .</article>
-        </div>
-    </section>
+   <!--<div ng-include="'template/partial/index_body.html'">   </div>-->
+    <div ng-view></div>
 </div>
-    <!-- START FOOTER  PART -->
-    <footer id="footer" ng-include="'template/partial/footer_before_logIn.html'">
+<!-- START FOOTER  PART -->
+<footer id="footer" ng-include="'template/partial/footer_before_logIn.html'">
 
-    </footer>
-    <!-- END FOOTER PART -->
-
-
-<script src="lib/angular.js"></script>
-<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>-->
-<!--<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>-->
-<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">-->
-<!--<script src="lib/ui-bootstrap-tpls-0.13.0.js"></script>-->
-<!--<script src="lib/ui-bootstrap-tpls-1.3.3.min.js"></script>-->
-<script src="app/app.js"></script>
-<script src="controller.js"></script>
-
+</footer>
+<!-- END FOOTER PART -->
 </body>
+
+<!--<pre ng-show="complexResult">{{complexResult}}</pre>-->
+
 </html>
+<!-- FOR SLIDER -->
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function() {
+        var owl = $("#owl-demo");
+        owl.owlCarousel({
+            itemsCustom : [
+                [0, 1]
+            ],
+        });
+    });
+
+
+</script>
