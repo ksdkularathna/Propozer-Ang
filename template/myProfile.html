@@ -1,0 +1,164 @@
+
+<div id="main">
+
+    <nav id="navpart">
+        <div class="container">
+            <div class="nav nav-left">
+                <div id="mobile-menu"></div>
+                <ul>
+                    <li><a href="after_login_user.html" class="active">My Timeline</a></li>
+                    <li><a href="">Edit Profile</a></li>
+                    <li><a href="manage_friends.html">Manage Friends</a></li>
+                    <li><a href="">Messages</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="content" class="common afterloginpage">
+        <div class="container">
+            <div class="row">
+                <div class="leftpart">
+                    <div class="social-icon">
+                        <div class="innersocial">
+                            <a href="" class="userlist"></a>
+                            <a href="" class="fb"></a>
+                            <a href="" class="tw"></a>
+                        </div>
+                    </div>
+                    <div class="profilepart">
+                        <div class="profile">
+                            <div class="pic">
+                                <img src="images/user-pic2.png" alt="">
+                            </div>
+                            <div class="details">
+                                <h1>{{UserDetail.firstName}}</h1>
+                                <p>City - {{UserDetail.city}}</p>
+                            </div>
+                        </div>
+                        <div class="myphotoes">
+                            <h1>My Photoes</h1>
+                            <div class="photo">
+                                <div class="photobox">
+                                    <img src="images/user-pic3.png" alt="">
+                                </div>
+                                <div class="photobox">
+                                    <img src="images/user-pic4.png" alt="">
+                                </div>
+                                <div class="photobox">
+                                    <img src="images/user-pic5.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aboutme">
+                        <h1>About Me <a href="#"></a></h1>
+                        <div class="aboutdetails">
+                            <ul class="about">
+                                <li>
+                                    <label>Date of Birth</label>
+                                    <p>{{UserDetail.dobDate}}-{{UserDetail.dobMonth}}-{{UserDetail.dobYear}}</p>
+                                </li>
+                                <li>
+                                    <label>Job</label>
+                                    <p>{{UserDetail.workingAs}}</p>
+                                </li>
+                                <li>
+                                    <label>Gender</label>
+                                    <p>{{UserDetail.gender}}</p>
+                                </li>
+                                <li>
+                                    <label>Lives in</label>
+                                    <p>{{UserDetail.city}}, {{UserDetail.country}}</p>
+                                </li>
+                                <li>
+                                    <label>Credits</label>
+                                    <p>249</p>
+                                </li>
+                            </ul>
+                            <div class="incompletebox">
+                                <a href="#">Your Profile is incomplete click here to complete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="premiumbox">
+                        <p>Reach up to 10x more people by promoting your ad.</p>
+                        <a href="#">Become a Premium Member</a>
+                    </div>
+                </div>
+                <div class="rightpart">
+                    <div class="accountbox">
+                        <h3>Please fill this , it will improve your account</h3>
+                        <form>
+                            <input type="text" name="" value="" class="phold2" placeholder="College / University">
+                            <button class="submit-btn">Submit</button>
+                        </form>
+                    </div>
+                    <div class="acceptedbox">
+                        <h3>Accepted List</h3>
+                        <div class="acceptedlist">
+                            <div class="accepteduser">
+                                <img src="images/user-pic3.png" alt="">
+                                <span class="icon online"><img src="images/online.png" alt=""></span>
+                                <a href="" class="icon chat"><img src="images/chat-icon.png" alt=""></a>
+                                <a href="" class="icon videocall"><img src="images/video-icon1.png" alt=""></a>
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/user-pic4.png" alt="">
+                                <span class="icon online"><img src="images/ofline.png" alt=""></span>
+                                <a href="" class="icon chat"><img src="images/chat-icon.png" alt=""></a>
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/user-pic5.png" alt="">
+                                <span class="icon online"><img src="images/ofline.png" alt=""></span>
+                                <a href="" class="icon chat"><img src="images/chat-icon.png" alt=""></a>
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/user-pic5.png" alt="">
+                                <span class="icon online"><img src="images/online.png" alt=""></span>
+                                <a href="" class="icon chat"><img src="images/chat-icon.png" alt=""></a>
+                                <a href="" class="icon videocall"><img src="images/video-icon1.png" alt=""></a>
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/user-pic6.png" alt="">
+                                <span class="icon online"><img src="images/ofline.png" alt=""></span>
+                                <a href="" class="icon chat"><img src="images/chat-icon.png" alt=""></a>
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/user-pic4.png" alt="">
+                                <span class="icon online"><img src="images/ofline.png" alt=""></span>
+                                <a href="" class="icon chat"><img src="images/chat-icon.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="acceptedbox matches">
+                        <h3>Suggested Matches for you</h3>
+                        <div class="acceptedlist">
+                            <div class="accepteduser">
+                                <img src="images/default-bg.png" alt="">
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/default-bg.png" alt="">
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/default-bg.png" alt="">
+                            </div>
+                            <div class="accepteduser">
+                                <img src="images/default-bg.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="propozer">
+        <div class="container">
+            <div class="propozer-icon"><img src="images/propozer-icon.png" alt="" /></div>
+            <article>Propozer is a unique, innovative and professional matchmaking service provider in Sri Lanka . We offer you the best possible matches of grooms and brides according to your wish through our expanding proprietary network. As a premium matchmaking service provider, our database includes a selected group of reliable candidates who will meet your exact criteria at it best. Propozer will definitely help you to find someone special whom you're compatible with and the one who can build a solid and everlasting relationship with you .</article>
+        </div>
+    </section>
+
+    </div>
