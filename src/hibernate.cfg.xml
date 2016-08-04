@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"org/hibernate/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">update</property>
+
+		<property name="hibernate.connection.autoReconnect">true</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/PropozalDataBase</property>
+		<property name="hibernate.connection.username">PropozalDataBase</property>
+		<property name="hibernate.connection.password">PrDaataBAEWe</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="connection.pool_size">1</property>
+
+		<!-- <property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">1800</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="connection.provider_class">
+			org.hibernate.connection.C3P0ConnectionProvider</property> -->
+
+
+		<!-- <property name="show_sql">true</property> -->
+
+		<!-- <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</property> -->
+		<!-- <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> 
+			<property name="hibernate.connection.url">jdbc:sqlserver://192.168.0.57:1433;DatabaseName=OrganizationMasterDB</property> 
+			<property name="hibernate.connection.username">sa</property> <property name="hibernate.connection.password">bargadss</property> -->
+
+		<!-- <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> 
+			<property name="hibernate.connection.url">jdbc:sqlserver://192.168.0.107:1433;DatabaseName=PropozalDataBase</property> 
+			<property name="hibernate.connection.username">sa</property> <property name="hibernate.connection.password">passw0rd</property> -->
+		<!-- <property name="show_sql">true</property> -->
+
+
+		<!-- <property name='hibernate.connection.driver_class'>com.mysql.jdbc.Driver</property> 
+			<property name='hibernate.connection.url'>jdbc:mysql://localhost:3307/mydatabase</property> 
+			<property name='hibernate.connection.username'>root</property> <property 
+			name='hibernate.connection.password'>root</property> -->
+
+		<mapping resource="com/bargadss/Propozal/bean/userLogin.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/registration.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/country.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/state.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/city.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/years.hbm.xml" />
+		<!-- <mapping resource="com/bargadss/Propozal/bean/imageProcessing.hbm.xml" /> -->
+		<mapping resource="com/bargadss/Propozal/bean/imageUpload.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/random.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/qualification.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/gender.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/age.hbm.xml" />
+		<!-- <mapping resource="com/bargadss/Propozal/bean/salary.hbm.xml" /> -->
+		<mapping resource="com/bargadss/Propozal/bean/religion.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
