@@ -1,0 +1,279 @@
+<section id="content" class="common searchpage">
+	<div class="container">
+
+		<script type="text/ng-template" id="group-template.html">
+    <div class="panel-heading">
+      <h4 class="panel-title" style="color:#fa39c3">
+        <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" uib-accordion-transclude="heading">
+          <span uib-accordion-header ng-class="{'text-muted': isDisabled}">
+            {{heading}}
+          </span>
+        </a>
+      </h4>
+    </div>
+    <div class="panel-collapse collapse" uib-collapse="!isOpen">
+      <div class="panel-body" style="text-align: right" ng-transclude></div>
+    </div>
+  </script>
+
+		<!-- --------------------------------------------------------------------------------------------------- -->
+
+		<div class="container">
+			<div id="mainbanner" class="searchProfilePage">
+				<div class="searchbox" ng-controller="SearchCtrl">
+					<h4>The Safest Way for a Serious Relationship</h4>
+					<form class="searchfield">
+						<div class="field">
+							<label>Gender</label> <select ng-model="form.gender"
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
+								<option ng-repeat="item in genderList">{{item.gender}}</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>City</label> <select ng-model="form.city"
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
+								<option ng-repeat="item in cityList">{{item.city}}</option>
+							</select>
+						</div>
+						<div class="field">
+							<label>Education</label> <select ng-model="form.qualification"
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
+								<option ng-repeat="item in qualificationList">{{item.qualification}}</option>
+							</select>
+						</div>
+						<div class="field2">
+							<label>Age</label> <select ng-model="form.minAge"
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
+								<option ng-repeat="item in ageList">{{item.age}}</option>
+							</select>
+						</div>
+						<div class="field2">
+							<label class="to">to</label> <select ng-model="form.maxAge"
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
+								<option ng-repeat="item in ageList">{{item.age}}</option>
+							</select>
+						</div>
+						<!-- <button class="bttn"  type="button" ng-click="searchBox(form)">Search</button> -->
+						<!-- <a
+							href="#/searchInside/{{form.gender}}/{{form.city}}/{{form.qualification}}/{{form.minAge}}/{{form.maxAge}}"
+							class="bttn">Search</a> -->
+
+						<div>
+							<button type="button" class="bttn" ng-click="searchUser(form)">Search</button>
+						</div>
+
+
+						<p class="msg">Search and find the best match. Become a member
+							to Propozer.lk.</p>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- --------------------------------------------------------------------------------------------------- -->
+
+
+		<div class="row" ng-show="result">
+			<aside class="refinesearch">
+				<div class="filterbox">
+					<h1>Refine Search</h1>
+
+					<uib-accordion close-others="oneAtATime">
+
+					<ul uib-accordion-group class="panel-default"
+						heading="{{menu.name}}" ng-repeat="menu in menuBar">
+						<!-- <input type="checkbox" ng-model="oneAtATime"> -->
+
+						<div ng-repeat="sub in menu.value">
+							<div class="action-checkbox" >
+								<input id="{{sub.subMenu}}" type="checkbox"
+									value="{{sub.subMenu}}"
+									ng-checked="selection.indexOf(sub.subMenu) > -1"
+									ng-click="toggleSelection(menu.identifier,sub.subMenu)"/> <label
+									for="{{sub.subMenu}}"></label> {{sub.subMenu}}
+							</div>
+						</div>
+
+						<!-- <ul ng-repeat="sub in menu.value">
+
+							<li><input type="checkbox"><label>{{sub.subMenu}}</label></li>
+
+						</ul> -->
+
+
+					</ul>
+					</uib-accordion>
+					
+					<div>
+							<button class="bttns" ng-click="newSearchUser()">Search</button>
+						</div>
+				</div>
+				
+			</aside>
+			<div class="rightpart">
+				<h4>
+					{{matchingCount}} Members that match your Partner Preferences.<a
+						href="">Edit</a>
+				</h4>
+				<div class="rightfilter">
+					<form>
+						<div class="field">
+							<input type="text" name="" value=""
+								placeholder="By date of Profile created" ng-model="xyz">
+							<button class="search-icon"></button>
+						</div>
+						<div class="field">
+							<input type="text" name="" value=""
+								placeholder="By most recent activity ">
+							<button class="search-icon"></button>
+						</div>
+						<div class="field">
+							<input type="text" name="" value=""
+								placeholder="Online at the moment">
+							<button class="search-icon"></button>
+						</div>
+					</form>
+					<div class="views-icon">
+						<span>View as</span>
+
+						<button class="grid-view" data-view-target="grid" type="button"
+							id="buttonA"></button>
+
+
+						<button class="list-view  active" data-view-target="list"
+							type="button" id="buttonB"></button>
+
+
+					</div>
+				</div>
+
+				<div class="grid-sec" id="grid">
+
+					<div class="detailsbox">
+						<div class="details" ng-repeat="result in searchResults | filter:xyz">
+							<div class="toppart">
+								<h3>{{result.firstName}}</h3>
+								<div class="socialbox">
+									<a href="#" class="icon-1"></a> <a href="#" class="icon-2"></a>
+									<a href="#" class="icon-3"></a>
+								</div>
+							</div>
+							<ul class="detailspart">
+								<li>
+									<h3>Self</h3>
+									<p>{{result.personType}}</p>
+								</li>
+								<li>
+									<h3>Family</h3>
+									<p>{{result.familyBackground}}</p>
+								</li>
+								<li>
+									<h3>Education</h3>
+									<p>{{result.eduAndCareer}}</p>
+								</li>
+								<li>
+									<h3>Looking for</h3>
+									<p>{{result.lookingFor}}</p>
+								</li>
+							</ul>
+							<div class="connect-btn">
+								<a href="#">Connect</a>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+				</div>
+
+
+				<div class="list-sec" id="list" style="display: none;">
+
+					<div class="detailsbox">
+						<div class="details" ng-repeat="result in searchResults">
+							<div class="toppart">
+								<h3>P1187M</h3>
+								<div class="socialbox">
+									<a href="#" class="icon-1"></a> <a href="#" class="icon-2"></a>
+									<a href="#" class="icon-3"></a>
+								</div>
+							</div>
+							<ul class="detailspart">
+								<li>
+									<h3>Self</h3>
+									<p>{{result.personType}}</p>
+								</li>
+								<li>
+									<h3>Family</h3>
+									<p>{{result.familyBackground}}</p>
+								</li>
+								<li>
+									<h3>Education</h3>
+									<p>{{result.eduAndCareer}}</p>
+								</li>
+								<li>
+									<h3>Looking for</h3>
+									<p>{{result.lookingFor}}</p>
+								</li>
+							</ul>
+							<div class="connect-btn">
+								<a href="#">Connect</a>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="clear"></div>
+				</div>
+				<ul class="pagination">
+					<li><a href="" class="prev">Prev</a></li>
+					<li><a href="">1</a></li>
+					<li><a href="">2</a></li>
+					<li><a href="" class="next">Next</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<script>
+	$('.searchpage .refinesearch li a').click(
+			function() {
+				var trig = $(this);
+				if (trig.hasClass('active_a')) {
+					trig.next('.searchpage .refinesearch li ul.accordingbox')
+							.slideToggle();
+					trig.removeClass('active_a');
+				} else {
+					$('.active_a').next(
+							'.searchpage .refinesearch li ul.accordingbox')
+							.slideToggle();
+					$('.active_a').removeClass('active_a');
+					trig.next('.searchpage .refinesearch li ul.accordingbox')
+							.slideToggle();
+					trig.addClass('active_a');
+				}
+				;
+				return false;
+			});
+</script>
+
+<script type="text/javascript">
+	jQuery(function() {
+		jQuery("#buttonA").click(function() {
+			jQuery("#grid").show();
+			jQuery("#list").hide();
+
+		});
+		jQuery("#buttonB").click(function() {
+			jQuery("#grid").hide();
+			jQuery("#list").show();
+		});
+	});
+</script>

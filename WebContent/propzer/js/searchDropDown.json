@@ -1,0 +1,209 @@
+{
+  "statusType": "OK",
+  "entity": {
+    "qualifications": [
+      {
+        "qualification": "BCA",
+        "id": 1
+      },
+      {
+        "qualification": "BTECH",
+        "id": 3
+      },
+      {
+        "qualification": "MCA",
+        "id": 2
+      },
+      {
+        "qualification": "MTECH",
+        "id": 4
+      }
+    ],
+    "MaritalStatus": [
+      {
+        "maritalStatus": "Married"
+      },
+      {
+        "maritalStatus": "Unmarried"
+      },
+      {
+        "maritalStatus": "Single"
+      },
+      {
+        "motherTongue": "English"
+      },
+      {
+        "motherTongue": "Hindi"
+      },
+      {
+        "motherTongue": "Tamil"
+      },
+      {
+        "motherTongue": "Sinhala"
+      }
+    ],
+    "cities": [
+      {
+        "city": "Addalaichenai",
+        "stateId": 1,
+        "Id": 1
+      },
+      {
+        "city": "Akkarapattuwa",
+        "stateId": 1,
+        "Id": 2
+      },
+      {
+        "city": "Eppawala",
+        "stateId": 2,
+        "Id": 3
+      },
+      {
+        "city": "Habarana",
+        "stateId": 2,
+        "Id": 4
+      },
+      {
+        "city": "Jalpaiguri",
+        "stateId": 3,
+        "Id": 6
+      },
+      {
+        "city": "Kolkata",
+        "stateId": 3,
+        "Id": 5
+      },
+      {
+        "city": "Mumbai",
+        "stateId": 4,
+        "Id": 7
+      },
+      {
+        "city": "Pune",
+        "stateId": 4,
+        "Id": 8
+      }
+    ],
+    "languages": [
+      {
+        "maritalStatus": "Married"
+      },
+      {
+        "maritalStatus": "Unmarried"
+      },
+      {
+        "maritalStatus": "Single"
+      },
+      {
+        "motherTongue": "English"
+      },
+      {
+        "motherTongue": "Hindi"
+      },
+      {
+        "motherTongue": "Tamil"
+      },
+      {
+        "motherTongue": "Sinhala"
+      }
+    ],
+    "ages": [
+      {
+        "ageId": 1,
+        "age": 20
+      },
+      {
+        "ageId": 2,
+        "age": 21
+      },
+      {
+        "ageId": 3,
+        "age": 22
+      },
+      {
+        "ageId": 4,
+        "age": 23
+      },
+      {
+        "ageId": 5,
+        "age": 24
+      },
+      {
+        "ageId": 6,
+        "age": 25
+      },
+      {
+        "ageId": 7,
+        "age": 26
+      },
+      {
+        "ageId": 8,
+        "age": 27
+      },
+      {
+        "ageId": 9,
+        "age": 28
+      },
+      {
+        "ageId": 10,
+        "age": 29
+      },
+      {
+        "ageId": 11,
+        "age": 30
+      }
+    ],
+    "genders": [
+      {
+        "gender": "Female",
+        "genderId": 2
+      },
+      {
+        "gender": "Male",
+        "genderId": 1
+      }
+    ],
+    "countries": [
+      {
+        "country": "India",
+        "id": 1
+      },
+      {
+        "country": "Sri Lanka",
+        "id": 2
+      }
+    ],
+    "religion": [
+      {
+        "relegion": "Buddhist",
+        "religionId": 4
+      },
+      {
+        "relegion": "Christian",
+        "religionId": 3
+      },
+      {
+        "relegion": "Hindu",
+        "religionId": 1
+      },
+      {
+        "relegion": "Muslim",
+        "religionId": 2
+      }
+    ],
+    "height": [
+      {
+        "height": "60"
+      },
+      {
+        "height": "61"
+      },
+      {
+        "height": "62"
+      }
+    ]
+  },
+  "entityType": "org.json.simple.JSONObject",
+  "status": 200,
+  "metadata": {}
+}

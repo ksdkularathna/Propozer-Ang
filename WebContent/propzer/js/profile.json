@@ -1,0 +1,43 @@
+{
+  "statusType": "OK",
+  "entity": {
+    "records": [
+      {
+        "lastName": "Mahato",
+        "country": "Sri Lanka",
+        "motherTongue": "english",
+        "gender": "female",
+        "city": "Addalaichenai",
+        "mobileNumber": 5896253621,
+        "linkdinUrl": "My linkdin URL new",
+        "forCountry": "D0ne",
+        "lookingFor": "Soulmate",
+        "relegion": "buddhist",
+        "familyBackground": "happy family",
+        "password": "Shanta@123",
+        "facebookUrl": "fb",
+        "forState": "D0ne",
+        "forCity": "D0ne",
+        "dobDate": "3",
+        "state": "Ampara",
+        "personType": "Loving and Caring",
+        "email": "shanta@bargadss.com",
+        "height": "60",
+        "image": "Jellyfish.jpg",
+        "careerField": "Tester",
+        "forSalary": "D0ne",
+        "serialNo": 1,
+        "firstName": "Shantaa",
+        "eduAndCareer": "Education and Career",
+        "monthlySal": 2,
+        "higestEdu": "MTECH",
+        "nicNumber": "NIC1234",
+        "dobYear": "1995",
+        "dobMonth": "febuary"
+      }
+    ]
+  },
+  "entityType": "org.json.simple.JSONObject",
+  "status": 200,
+  "metadata": {}
+}

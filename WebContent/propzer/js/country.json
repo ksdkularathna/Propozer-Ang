@@ -1,0 +1,18 @@
+{
+  "statusType": "OK",
+  "entity": {
+    "records": [
+      {
+        "country": "India",
+        "id": 1
+      },
+      {
+        "country": "Sri Lanka",
+        "id": 2
+      }
+    ]
+  },
+  "entityType": "org.json.simple.JSONObject",
+  "status": 200,
+  "metadata": {}
+}

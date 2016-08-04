@@ -1,0 +1,50 @@
+{
+  "statusType": "OK",
+  "entity": {
+    "records": [
+      {
+        "city": "Addalaichenai",
+        "stateId": 1,
+        "Id": 1
+      },
+      {
+        "city": "Akkarapattuwa",
+        "stateId": 1,
+        "Id": 2
+      },
+      {
+        "city": "Eppawala",
+        "stateId": 2,
+        "Id": 3
+      },
+      {
+        "city": "Habarana",
+        "stateId": 2,
+        "Id": 4
+      },
+      {
+        "city": "Kolkata",
+        "stateId": 3,
+        "Id": 5
+      },
+      {
+        "city": "Jalpaiguri",
+        "stateId": 3,
+        "Id": 6
+      },
+      {
+        "city": "Mumbai",
+        "stateId": 4,
+        "Id": 7
+      },
+      {
+        "city": "Pune",
+        "stateId": 4,
+        "Id": 8
+      }
+    ]
+  },
+  "entityType": "org.json.simple.JSONObject",
+  "status": 200,
+  "metadata": {}
+}

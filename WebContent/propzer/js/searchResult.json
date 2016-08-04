@@ -1,0 +1,60 @@
+{
+  "statusType": "OK",
+  "entity": {
+    "searchVal": [
+      {
+        "searchName": "Gender",
+        "searchValue": "Female"
+      },
+      {
+        "searchName": "Qualification",
+        "searchValue": "MTECH"
+      },
+      {
+        "searchName": "City",
+        "searchValue": "Mumbai"
+      },
+      {
+        "searchName": "Age",
+        "searchValue": 20
+      },
+      {
+        "searchName": "Age",
+        "searchValue": 21
+      }
+    ],
+    "records": [
+      {
+        "lastName": "Mahato",
+        "motherTongue": "English",
+        "gender": "Female",
+        "mobileNumber": 5896253621,
+        "linkdinUrl": "My linkdin URL new",
+        "forCountry": "D0ne",
+        "lookingFor": "Soulmate",
+        "relegion": "Hindu",
+        "familyBackground": "happy family",
+        "password": "Shanta@123",
+        "facebookUrl": "fb",
+        "forState": "D0ne",
+        "forCity": "D0ne",
+        "dobDate": "2",
+        "personType": "Loving and Caring",
+        "email": "shanta@bargadss.com",
+        "height": "61",
+        "careerField": "Developer",
+        "serialNo": 1,
+        "firstName": "Shanta",
+        "eduAndCareer": "Education and Career",
+        "higestEdu": "MTECH",
+        "nicNumber": "NIC1234",
+        "dobYear": "1995",
+        "dobMonth": "Febuary"
+      }
+    ],
+    "matchingCount": 1
+  },
+  "entityType": "org.json.simple.JSONObject",
+  "status": 200,
+  "metadata": {}
+}
