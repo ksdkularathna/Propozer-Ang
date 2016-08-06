@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container for-fixed-header">
 
 	<script type="text/ng-template" id="group-template.html">
     <div class="panel-heading">
@@ -15,7 +15,7 @@
     </div>
   </script>
 
-	<div class="topbar">
+	<div class="topbar header-fixed">
 		<div class="logo">
 			<h1>
 				<a href="index.html"><img src="images/logo.png" alt="" /></a>
@@ -71,7 +71,8 @@
 						<option ng-repeat="item in ageList">{{item.age}}</option>
 					</select>
 				</div>
-				<button class="bttn" type="button" ng-click="searchBox(form)">Search</button>
+				
+				<button class="bttn myLinkToTop" id="but1" type="button" ng-click="searchBox(form)">Search</button>
 				<!-- <a href="#/search/{{form.gender}}/{{form.city}}/{{form.qualification}}/{{form.minAge}}/{{form.maxAge}}" class="bttn">Search</a> -->
 				<p class="msg">Search and find the best match. Become a member
 					to Propozer.lk.</p>
@@ -272,7 +273,6 @@
 				return false;
 			});
 </script>
-
 <script type="text/javascript">
 	jQuery(function() {
 		jQuery("#buttonA").click(function() {
@@ -286,3 +286,12 @@
 		});
 	});
 </script>
+ <script>
+ $('.myLinkToTop').click(function () {
+    $('html, body').animate({
+    	 scrollTop:560
+    }, 'slow');
+    return false;
+});
+    
+    </script>  
