@@ -1,3 +1,25 @@
+<div id="main">
+
+<nav id="navpart">
+		<div class="container">
+			<div class="nav nav-left">
+				<div id="mobile-menu"></div>
+				<ul>
+					<li><a href="after_login_user.html" class="active">My
+							Timeline</a></li>
+					<li><a href="#/editProfile/{{user.email}}">Edit Profile</a></li>
+					<li><a href="#/searchProfile/{{user.email}}">Search Profile</a></li>
+					
+					<li><a href="#/demo">Demo</a></li>
+					
+					<li><a href="manage_friends.html">Manage Friends</a></li>
+					<li><a href="">Messages</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</div>
+
 <section id="content" class="common searchpage">
 	<div class="container">
 		<div class="row">
@@ -135,21 +157,21 @@
 
 				<!-- --------------------------------------------------------------------------------- -->
 
-				<div class="row" data-ng-if="user.gender != 'PenDing0o'">
+				<!-- <div class="row" data-ng-if="user.gender != 'PenDing0o'">
 					<div class="col-sm-2">Gender</div>
 					<div class="col-sm-6">
-						<!-- <input type="text" class="form-control"
+						<input type="text" class="form-control"
 						placeholder="Enter first name" ng-model="user.gender"
-						value="{{user.gender}}"> -->
+						value="{{user.gender}}">
 
 						<label class="radio-inline"> <input type="radio"
-							ng-model="user.gender" name="gender" ng-value="male" id="gender"
-							required class="minimal" ng-checked="user.gender == 'male'" />
+							ng-model="user.gender" name="gender" ng-value="Male" id="gender"
+							 class="minimal" ng-checked="user.gender == 'Male'" />
 							Male
 						</label> <label class="radio-inline"> <input type="radio"
-							ng-model="user.gender" name="gender" ng-value="female"
-							id="gender" required class="minimal"
-							ng-checked="user.gender =='female'" /> Female
+							ng-model="user.gender" name="gender" ng-value="Female"
+							id="gender" class="minimal"
+							ng-checked="user.gender =='Female'" /> Female
 						</label>
 
 						<p
@@ -157,7 +179,27 @@
 							class="help-block" style="color: #FF0000">Gender is Required.</p>
 
 					</div>
+				</div> -->
+				
+				<!-- --------------------------------------------------------------------------------- -->
+				
+				<div class="row" data-ng-if="user.gender != 'PenDing0o'">
+					<div class="col-sm-2">Gender</div>
+					<div class="col-sm-6">
+						<select class="scontrol2" ng-model="user.gender" required
+							id="gender" value="{{user.gender}}" ng-selected="user.gender">
+							<option value="Female">Female</option>
+							<option value="Male">Male</option>
+							
+						</select>
+
+						<!-- <p
+							ng-show="editForm.height.$invalid && !editForm.height.$pristine"
+							class="help-block" style="color: #FF0000">height is Required.</p> -->
+
+					</div>
 				</div>
+				
 				<!-- --------------------------------------------------------------------------------- -->
 
 				<div class="row" data-ng-if="user.height != 'PenDing0o'">
@@ -489,9 +531,11 @@
 				</div>
 				<!-- --------------------------------------------------------------------------------- -->
 
+<!-- ng-disabled="editForm.$invalid" -->
+
 				<div class="row" align="center">
 					<button type="button" class="btn btn-primary"
-						ng-disabled="editForm.$invalid" ng-click="editDone(user)">Update</button>
+						 ng-click="editDone(user)">Update</button>
 				</div>
 
 			</form>
