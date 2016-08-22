@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bargadss.Propozal.Admin.bean.Salary" table="Salary">
+	
+		<id column="serialNo" name="serialNo" type="long" >
+		<generator class="increment" />
+		</id>
+		<property column="value" name="value" type="long" />
+		<property column="salaryValue" name="salaryValue" type="string" />
+	</class>
+</hibernate-mapping>

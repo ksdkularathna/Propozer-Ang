@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bargadss.Propozal.Admin.bean.Registration"
+		table="UserRegistration">
+
+		<id column="serialNo" name="serialNo" type="long">
+			<generator class="increment" />
+		</id>
+
+		<property column="firstName" name="firstName" type="string" />
+		<property column="lastName" name="lastName" type="string" />
+		<property column="email" name="email" type="string" />
+		<property column="password" name="password" type="string" />
+
+		<property column="country" name="country" type="long" />
+		<property column="forCountry" name="forCountry" type="string" />
+
+		<property column="city" name="city" type="long" />
+		<property column="forCity" name="forCity" type="string" />
+
+		<property column="state" name="state" type="long" />
+		<property column="forState" name="forState" type="string" />
+
+		<property column="gender" name="gender" type="string" />
+		<property column="height" name="height" type="string" />
+		<property column="dobYear" name="dobYear" type="string" />
+
+		<property column="birthYear" name="birthYear" type="long" />
+
+		<property column="dobMonth" name="dobMonth" type="string" />
+		<property column="dobDate" name="dobDate" type="string" />
+		<property column="relegion" name="relegion" type="string" />
+		<property column="motherTongue" name="motherTongue" type="string" />
+		<property column="higestEdu" name="higestEdu" type="string" />
+		<property column="careerField" name="careerField" type="string" />
+		<property column="workingAs" name="workingAs" type="string" />
+		<property column="monthlySal" name="monthlySal" type="long" />
+		<property column="forSalary" name="forSalary" type="string" />
+
+		<property column="personType" name="personType" type="string" />
+		<property column="familyBackground" name="familyBackground"
+			type="string" />
+		<property column="eduAndCareer" name="eduAndCareer" type="string" />
+		<property column="lookingFor" name="lookingFor" type="string" />
+		<property column="facebookUrl" name="facebookUrl" type="string" />
+		<property column="linkdinUrl" name="linkdinUrl" type="string" />
+		<property column="nicNumber" name="nicNumber" type="string" />
+		<property column="mobileNumber" name="mobileNumber" type="long" />
+		<property column="forMobile" name="forMobile" type="string" />
+
+		<property column="userStatus" name="status" type="string" />
+
+		<property column="fbstatus" name="FBstatus" type="string" />
+		<property column="lstatus" name="Lstatus" type="string" />
+		<property column="nicstatus" name="NICstatus" type="string" />
+		<property column="adminStatus" name="adminStatus" type="string"/>
+
+	</class>
+</hibernate-mapping>

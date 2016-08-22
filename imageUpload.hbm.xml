@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bargadss.Propozal.Admin.bean.ImageUpload" table="ImageUpload">
+	
+		<id column="imageId" name="imageId" type="long" >
+		<generator class="increment" />
+		</id>		
+		<property column="imagePath" name="imagePath" type="string" />
+		<property column="email" name="email" type="string" />
+		<property column="imageType" name="imageType" type="string" />
+		<property column="uploadDate" name="uploadDate" type="java.sql.Date" />
+		
+	</class>
+</hibernate-mapping>

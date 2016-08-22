@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bargadss.Propozal.Admin.bean.Gender" table="Gender">
+	
+		<id column="genderId" name="genderId" type="long" >
+		<generator class="increment" />
+		</id>
+		<property column="gender" name="gender" type="string" />
+	</class>
+</hibernate-mapping>
