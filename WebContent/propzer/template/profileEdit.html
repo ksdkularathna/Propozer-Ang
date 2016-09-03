@@ -39,6 +39,27 @@
 				</div>
 
 				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row">
+					<div class="col-sm-2">Password</div>
+					<div class="col-sm-6">
+						<input type="password" class="control" placeholder="Password"
+							name="password" id="password" ng-model="user.password"
+							ng-minlength="6" ng-maxlength="20"
+							ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required>
+							<span
+							ng-show="editForm.password.$error.required && editForm.password.$dirty"
+							style="color: #FF0000">Password is Required</span> <span
+							ng-show="!editForm.password.$error.required && (editForm.password.$error.minlength || editForm.password.$error.maxlength) && editForm.password.$dirty"
+							style="color: #FF0000"> Passwords must be between 6 and 20
+							characters.</span> <span
+							ng-show="!editForm.password.$error.required && !editForm.password.$error.minlength && !editForm.password.$error.maxlength && editForm.password.$error.pattern && editForm.password.$dirty"
+							style="color: #FF0000"> Must contain one lower &amp;
+							uppercase letter, and one non-alpha character (a number or a
+							symbol.)</span>
+					</div>
+				</div>
+				
+				<!-- --------------------------------------------------------------------------------- -->
 
 				<div class="row" data-ng-if="user.firstName != 'PenDing0o'">
 					<div class="col-sm-2">First Name</div>
@@ -423,14 +444,12 @@
 				<div class="row" data-ng-if="user.forSalary!= 'PenDing0o'">
 					<div class="col-sm-2">Monthly Salary</div>
 					<div class="col-sm-6">
-						<select class="scontrol2" ng-model="user.monthlySal" required
-							ng-selected="user.monthlySal" name="monthlySal" id="monthlySal">
-							<option value="1">0-10000 LKR</option>
-							<option value="2">10001-50000 LKR</option>
-							<option value="3">50001-100000 LKR</option>
-							<option value="4">100001-300000 LKR</option>
-							<option value="5">Above 300001 LKR</option>
-						</select>
+					
+					<select ng-model="user.monthlySal" class="form-control"
+							id="monthlySal" required>
+							<option ng-repeat="item in salaries"
+								ng-selected="item.salaryValue==user.monthlySal" value="{{item.value}}">{{item.salaryValue}}</option>
+						</select>						
 						<p
 							ng-show="editForm.monthlySal.$invalid && !loginForm.monthlySal.$pristine"
 							class="help-block" style="color: #FF0000">Select salary</p>
@@ -509,11 +528,11 @@
 					<div class="col-sm-6">
 						<input type="text" class="form-control"
 							placeholder="Enter first name" ng-model="user.nicNumber"
-							value="{{user.nicNumber}}" id="nicNumber" required>
-							
+							value="{{user.nicNumber}}" id="nicNumber" disabled>
+						<!-- 	
 							<p
 							ng-show="editForm.nicNumber.$invalid && !loginForm.nicNumber.$pristine"
-							class="help-block" style="color: #FF0000">Please enter yor NIC number</p>
+							class="help-block" style="color: #FF0000">Please enter yor NIC number</p> -->
 					</div>
 				</div>
 				<!-- --------------------------------------------------------------------------------- -->
@@ -535,7 +554,7 @@
 
 				<div class="row" align="center">
 					<button type="button" class="btn btn-primary"
-						 ng-click="editDone(user)">Update</button>
+						 ng-click="editDone(user)" ng-disabled="editForm.$invalid">Update</button>
 				</div>
 
 			</form>

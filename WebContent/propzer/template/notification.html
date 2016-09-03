@@ -1,0 +1,34 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg modal-box propozal-req">
+       
+            <div class="title">
+             <button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h1>Propozal Request</h1>
+               
+                <!--<h4 class="modal-title">{{title}}</h4>-->
+             
+            </div>
+            <div class="modal-body">
+                <form name="forgotForm" id="forgotForm" novalidate>
+                                                                           
+<div ng-repeat="friend in friendNameList">
+    <div class="field for-accept">                                            
+<span style="width:60%; float:left;"><a class="pro-link" href="#">{{friend.name}}</a></span> 
+<span style="width:20%; float:left;">
+   <button class="view" ng-click="accept(friend.email)" >Accept</button></span>
+    <span style="width:20%; float:left;">
+   <button class="btn btn-red no-mar" ng-click="decline(friend.email)" >Decline</button></span> 
+</div>
+</div>
+
+
+                  
+                </form>
+                    
+            </div>
+
+         
+        <div class="clear"></div>
+    </div>
+
+</div>

@@ -1,7 +1,4 @@
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript"
-	src="http://cdn.rawgit.com/tapmodo/Jcrop/master/js/jquery.Jcrop.min.js"></script>
+
 <div id="main">
 
 	<nav id="navpart">
@@ -12,11 +9,10 @@
 					<li><a href="after_login_user.html" class="active">My
 							Timeline</a></li>
 					<li><a href="#/editProfile/{{user.email}}">Edit Profile</a></li>
-					<li><a href="#/searchProfile/{{user.email}}">Search
-							Profile</a></li>
-
+					<li><a href="#/searchProfile/{{user.email}}">Search Profile</a></li>
+					
 					<li><a href="#/demo">Demo</a></li>
-
+					
 					<li><a href="manage_friends.html">Manage Friends</a></li>
 					<li><a href="">Messages</a></li>
 				</ul>
@@ -30,14 +26,8 @@
 				<div class="leftpart">
 					<div class="social-icon">
 						<div class="innersocial">
-							<span data-ng-if="user.Lstatus != 'NotDone'"><img
-								ng-src="images/linkedin.png" alt=""></span> <span
-								data-ng-if="user.NICstatus != 'NotDone'"><img
-								ng-src="images/list-icon.png" alt=""></span> <span
-								data-ng-if="user.FBstatus != 'NotDone'"> <img
-								ng-src="images/fb-icon2.png" alt=""></span>
-
-
+							<a href="" class="userlist"></a> <a href="" class="fb"></a> <a
+								href="" class="tw"></a>
 						</div>
 					</div>
 					<div class="profilepart">
@@ -82,11 +72,11 @@
 									<img src="imageUpload/{{image3}}" alt="">
 								</div>
 							</div>
-
+							
 							<div class="pull-right linkClass">
-								<a href="#/seeImage/{{user.email}}">View all</a>
+							<a href="#/seeImage/{{user.email}}">View all</a>
 							</div>
-
+							
 						</div>
 					</div>
 					<div class="aboutme">
@@ -201,9 +191,7 @@
 
 								<li data-ng-if="user.nicNumber != 'PenDing0o'"><label>National
 										Identity Card Number</label>
-									<p>{{user.nicNumber}}</p> <img
-									style="max-width: 160px; height: 100px; margin-left: 50px"
-									ng-src="imageUpload/{{user.nicImage}}" alt=""></li>
+									<p>{{user.nicNumber}}</p></li>
 
 								<li data-ng-if="user.mobileNumber != 'PenDing0o'"><label>Mobile
 										Number</label>
@@ -224,8 +212,7 @@
 							<div ng-show="notDone">
 								<input type="text" name="" value="" class="phold2"
 									ng-show="noDropDown" placeholder="{{pendingData.name}}"
-									ng-model="pendingData.enteredValue"
-									data-ng-if="pendingData.varField!='NICuploadStatus'"> <select
+									ng-model="pendingData.enteredValue"> <select
 									class="scontrol2" ng-model="pendingData.enteredValue"
 									data-ng-if="pendingData.varField=='higestEdu'"
 									ng-show="dropDown">
@@ -248,21 +235,11 @@
 								</select>
 
 								<button class="submit-btn"
-									ng-click="updatePending(user,pendingData)"
-									data-ng-if="pendingData.varField!='NICuploadStatus'">Submit</button>
-
-							</div>
-
-							<div data-ng-if="pendingData.varField=='NICuploadStatus'">
-
-								<button type="button" class="btn btn-red" data-toggle="modal"
-									data-target=".bs-example-modal-sm1" style="margin-left: 29px;">Upload
-									NIC picture</button>
-
+									ng-click="updatePending(user,pendingData)">Submit</button>
 							</div>
 
 							<div ng-show="doneProfile">
-								<h1>Profile Completed !!</h1>
+								<h1>Completed profile!!</h1>
 							</div>
 
 						</form>
@@ -270,37 +247,46 @@
 					<div class="acceptedbox">
 						<h3>Accepted List</h3>
 						<div class="acceptedlist">
-							<div class="accepteduser" ng-repeat="frimage in friendImageList">
-
-								<h3>
-									<a
-										href="#/myProfile1/{{frimage.email}}+{{state}}+{{frimage.image}}">
-										<img style="max-width: 100%; height: auto;"
-										ng-src="imageUpload/{{frimage.image}}" alt="">
-
-									</a>
-								</h3>
+							<div class="accepteduser">
+								<img src="images/user-pic3.png" alt=""> <span
+									class="icon online"><img src="images/online.png" alt=""></span>
+								<a href="" class="icon chat"><img src="images/chat-icon.png"
+									alt=""></a> <a href="" class="icon videocall"><img
+									src="images/video-icon1.png" alt=""></a>
+							</div>
+							<div class="accepteduser">
+								<img src="images/user-pic4.png" alt=""> <span
+									class="icon online"><img src="images/ofline.png" alt=""></span>
+								<a href="" class="icon chat"><img src="images/chat-icon.png"
+									alt=""></a>
+							</div>
+							<div class="accepteduser">
+								<img src="images/user-pic5.png" alt=""> <span
+									class="icon online"><img src="images/ofline.png" alt=""></span>
+								<a href="" class="icon chat"><img src="images/chat-icon.png"
+									alt=""></a>
+							</div>
+							<div class="accepteduser">
+								<img src="images/user-pic5.png" alt=""> <span
+									class="icon online"><img src="images/online.png" alt=""></span>
+								<a href="" class="icon chat"><img src="images/chat-icon.png"
+									alt=""></a> <a href="" class="icon videocall"><img
+									src="images/video-icon1.png" alt=""></a>
+							</div>
+							<div class="accepteduser">
+								<img src="images/user-pic6.png" alt=""> <span
+									class="icon online"><img src="images/ofline.png" alt=""></span>
+								<a href="" class="icon chat"><img src="images/chat-icon.png"
+									alt=""></a>
+							</div>
+							<div class="accepteduser">
+								<img src="images/user-pic4.png" alt=""> <span
+									class="icon online"><img src="images/ofline.png" alt=""></span>
+								<a href="" class="icon chat"><img src="images/chat-icon.png"
+									alt=""></a>
 							</div>
 						</div>
 					</div>
-
-					<div class="acceptedbox">
-						<h3>People Who Viewed Your Profile</h3>
-						<div class="acceptedlist">
-							<div class="accepteduser"
-								ng-repeat="frimage1 in friendImageList1">
-
-								<h3>
-									<a href="#/myProfile1/{{frimage1.email}}+{{state}}"> <img
-										style="max-width: 100%; height: auto;"
-										ng-src="imageUpload/{{frimage1.image}}" alt="">
-
-									</a>
-								</h3>
-							</div>
-						</div>
-					</div>
-
 					<div class="acceptedbox matches">
 						<h3>Suggested Matches for you</h3>
 						<div class="acceptedlist">
@@ -344,7 +330,7 @@
 </div>
 
 
-<!-- ********************************pops1************************************************************* -->
+<!-- ********************************pops************************************************************* -->
 
 <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
 	aria-labelledby="mySmallModalLabel">
@@ -415,43 +401,4 @@
 	</div>
 </div>
 
-<!-- ********************************pops2************************************************************* -->
 
-<div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog"
-	aria-labelledby="mySmallModalLabel">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">×</span>
-				</button>
-				<!--<h4 class="modal-title" id="mySmallModalLabel">Small modal</h4> -->
-			</div>
-			<div class="modal-body">
-
-				<form method="post" action="UploadServlet"
-					enctype="multipart/form-data" onsubmit="return validate();">
-
-					<div>
-						<input type="hidden" name="email" value="{{user.email}}" />
-
-						<div class="row" align="center">
-							<input type="file" name="filecover" value="Upload" />
-						</div>
-
-						<input type="hidden" name="nicPicture" value="nicPicture" />
-
-						<div class="row" align="center">
-							<button type="submit" class="btn btn-warning">Save</button>
-						</div>
-
-					</div>
-
-				</form>
-
-			</div>
-		</div>
-	</div>
-</div>

@@ -48,36 +48,36 @@
 					<form class="searchfield">
 						<div class="field">
 							<label>Gender</label> <select ng-model="form.gender"
-								class="form-control" class="scontrol" ng-change="logResultGender(form.gender)">
-								<option value="Select">Select</option>
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
 								<option ng-repeat="item in genderList">{{item.gender}}</option>
-							</select>  
+							</select>
 						</div>
 						<div class="field">
 							<label>City</label> <select ng-model="form.city"
-								class="form-control" class="scontrol" ng-change="logResultCity(form.city)">
-								<option value="Select">Select</option>
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
 								<option ng-repeat="item in cityList">{{item.city}}</option>
 							</select>
 						</div>
 						<div class="field">
 							<label>Education</label> <select ng-model="form.qualification"
-								class="form-control" class="scontrol" ng-change="logResultQualification(form.qualification)">
-								<option value="Select">Select</option>
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
 								<option ng-repeat="item in qualificationList">{{item.qualification}}</option>
 							</select>
 						</div>
 						<div class="field2">
 							<label>Age</label> <select ng-model="form.minAge"
-								class="form-control" class="scontrol" ng-change="logResultAge(form.minAge)">
-								<option value="Select">Select</option>
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
 								<option ng-repeat="item in ageList">{{item.age}}</option>
 							</select>
 						</div>
 						<div class="field2">
 							<label class="to">to</label> <select ng-model="form.maxAge"
-								class="form-control" class="scontrol" ng-change="logResultAge1(form.maxAge)">
-								<option value="Select">Select</option>
+								class="form-control" class="scontrol">
+								<option value="">Select</option>
 								<option ng-repeat="item in ageList">{{item.age}}</option>
 							</select>
 						</div>
@@ -114,11 +114,11 @@
 
 						<div ng-repeat="sub in menu.value">
 							<div class="action-checkbox" >
-								<input class="check1" id="{{sub.subMenu}}" type="checkbox"
+								<input id="{{sub.subMenu}}" type="checkbox"
 									value="{{sub.subMenu}}"
-									ng-checked="arar[sub.subMenu]"
-									ng-click="toggleSelection(menu.identifier,sub.subMenu)"/> <label class="check2"
-									for="{{sub.subMenu}}"> {{sub.subMenu}}</label>
+									ng-checked="selection.indexOf(sub.subMenu) > -1"
+									ng-click="toggleSelection(menu.identifier,sub.subMenu)"/> <label
+									for="{{sub.subMenu}}"></label> {{sub.subMenu}}
 							</div>
 						</div>
 
@@ -180,7 +180,7 @@
 					<div class="detailsbox">
 						<div class="details" ng-repeat="result in searchResults | filter:xyz">
 							<div class="toppart">
-								<h3><a href="#/myProfile1/{{result.email}}+{{propozalSent[result.email]}}">{{result.firstName}}</h3>
+								<h3><a href="#/myProfile1/{{result.email}}">{{result.firstName}}</h3>
 								<div class="socialbox">
 									<a href="#" class="icon-1"></a> <a href="#" class="icon-2"></a>
 									<a href="#" class="icon-3"></a>
@@ -204,13 +204,21 @@
 									<p>{{result.lookingFor}}</p>
 								</li>
 							</ul>
-								    <div class="connect-btn">
-        <button style="background:#e2335b; padding:6px 10px; color:#fff; width:100%;" ng-click="select(result)" ng-if="!propozalSent[result.email]">Connect</button>
-         </div> 
-         
-         <div class="connect-btn">
-        <div style="background:#249003; padding:6px 10px; color:#fff;"  ng-click="select(result)" ng-if="propozalSent[result.email]">Propozal Sent</div>
-         </div>
+							<!-- <div ng-if="showConnect==true" class="bttns">
+								<button type="button" class="bttn myLinkToTop2" ng-click="showDiv()">Connect</button>
+									</div> -->
+									
+								<div ng-if="showSent==true" class="bttns">
+								<div >Proposal Sent</div>
+									</div>
+								<!-- <a href ng-click="addFrnd()">Connect</a> -->
+							<!-- <div ng-repeat='activity in activities'>
+        <span>{{activity.name}} seen = {{activity.seen}}</span>
+        <button ng-click='activity.seen = !activity.seen'>{{activity.seen ? 'AddFriend' : 'friendrequestSend'}}</button>
+    </div> 
+        
+</div>-->
+						
 						</div>
 
 					</div>
@@ -224,7 +232,7 @@
 					<div class="detailsbox">
 						<div class="details" ng-repeat="result in searchResults">
 							<div class="toppart">
-								<h3><a href="#/myProfile1/{{result.email}}+{{propozalSent[result.email]}}">{{result.firstName}}</h3>
+								<h3>P1187M</h3>
 								<div class="socialbox">
 									<a href="#" class="icon-1"></a> <a href="#" class="icon-2"></a>
 									<a href="#" class="icon-3"></a>
@@ -248,13 +256,9 @@
 									<p>{{result.lookingFor}}</p>
 								</li>
 							</ul>
-							    <div class="connect-btn">
-        <button style="background:#e2335b; padding:6px 10px; color:#fff; width:100%;" ng-click="select(result)" ng-if="!propozalSent[result.email]">Connectyyyy</button>
-         </div> 
-         
-         <div class="connect-btn">
-        <div style="background:#249003; padding:6px 10px; color:#fff;"  ng-click="select(result)" ng-if="propozalSent[result.email]">Propozal Sent</div>
-         </div>
+							<div class="connect-btn">
+								<a href="#">Connect</a>
+							</div>
 						</div>
 
 					</div>
