@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bargadss.Propozal.Admin.bean.Friend" table="Friend">
+	
+<composite-id>
+<key-property name="userEmailId" column="userEmailId" type="string" />
+<key-property name="friendEmailId" column="friendEmailId" type="string" />
+</composite-id>
+		<property column="accepted" name="accepted" type="string" />
+		<property column="decline" name="decline" type="string" />
+		<property column="status" name="status" type="string" />
+	</class>
+</hibernate-mapping>

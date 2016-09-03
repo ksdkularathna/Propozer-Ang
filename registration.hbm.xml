@@ -4,7 +4,7 @@
 
 <hibernate-mapping>
 	<class name="com.bargadss.Propozal.Admin.bean.Registration"
-		table="UserRegistration">
+		table="Registration">
 
 		<id column="serialNo" name="serialNo" type="long">
 			<generator class="increment" />

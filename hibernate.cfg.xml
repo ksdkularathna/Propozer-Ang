@@ -10,6 +10,7 @@
 		<property name="hibernate.connection.autoReconnect">true</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://192.168.0.101:3306/PropozalDataBase</property>
+		
 		<property name="hibernate.connection.username">PropozalDataBase</property>
 		<property name="hibernate.connection.password">PrDaataBAEWe</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -28,6 +29,7 @@
 		<mapping resource="com/bargadss/Propozal/Admin/bean/age.hbm.xml" />
 		<mapping resource="com/bargadss/Propozal/Admin/bean/religion.hbm.xml" />
 		<mapping resource="com/bargadss/Propozal/Admin/bean/imageUpload.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/Admin/bean/friend.hbm.xml" />
 		
 
 	</session-factory>
