@@ -9,7 +9,7 @@
 
 		<property name="hibernate.connection.autoReconnect">true</property>
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/PropozalDataBase</property>
+		<property name="hibernate.connection.url">jdbc:mysql://192.168.0.101:3306/PropozalDataBase</property>
 		<property name="hibernate.connection.username">PropozalDataBase</property>
 		<property name="hibernate.connection.password">PrDaataBAEWe</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
@@ -24,7 +24,7 @@
 			org.hibernate.connection.C3P0ConnectionProvider</property> -->
 
 
-		<!-- <property name="show_sql">true</property> -->
+		<property name="show_sql">true</property>
 
 		<!-- <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</property> -->
 		<!-- <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property> 
@@ -54,8 +54,10 @@
 		<mapping resource="com/bargadss/Propozal/bean/qualification.hbm.xml" />
 		<mapping resource="com/bargadss/Propozal/bean/gender.hbm.xml" />
 		<mapping resource="com/bargadss/Propozal/bean/age.hbm.xml" />
-		<!-- <mapping resource="com/bargadss/Propozal/bean/salary.hbm.xml" /> -->
+		<mapping resource="com/bargadss/Propozal/bean/salary.hbm.xml" />
 		<mapping resource="com/bargadss/Propozal/bean/religion.hbm.xml" />
+		<mapping resource="com/bargadss/Propozal/bean/friend.hbm.xml"/>
+		<mapping resource="com/bargadss/Propozal/bean/viewers.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
