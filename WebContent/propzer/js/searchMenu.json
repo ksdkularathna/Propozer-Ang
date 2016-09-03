@@ -1,0 +1,184 @@
+{
+  "statusType": "OK",
+  "entity": [
+    {
+      "identifier": "Gender",
+      "name": "Gender",
+      "value": [
+        {
+          "subMenu": "Female"
+        },
+        {
+          "subMenu": "Male"
+        }
+      ]
+    },
+    {
+      "identifier": "Height",
+      "name": "Height",
+      "value": [
+        {
+          "subMenu": "60"
+        },
+        {
+          "subMenu": "61"
+        },
+        {
+          "subMenu": "62"
+        }
+      ]
+    },
+    {
+      "identifier": "Age",
+      "name": "Age",
+      "value": [
+        {
+          "subMenu": 20
+        },
+        {
+          "subMenu": 21
+        },
+        {
+          "subMenu": 22
+        },
+        {
+          "subMenu": 23
+        },
+        {
+          "subMenu": 24
+        },
+        {
+          "subMenu": 25
+        },
+        {
+          "subMenu": 26
+        },
+        {
+          "subMenu": 27
+        },
+        {
+          "subMenu": 28
+        },
+        {
+          "subMenu": 29
+        },
+        {
+          "subMenu": 30
+        }
+      ]
+    },
+    {
+      "identifier": "Country",
+      "name": "Country",
+      "value": [
+        {
+          "subMenu": "India"
+        },
+        {
+          "subMenu": "Sri Lanka"
+        }
+      ]
+    },
+    {
+      "name": "City",
+      "value": [
+        {
+          "subMenu": "Addalaichenai"
+        },
+        {
+          "subMenu": "Akkarapattuwa"
+        },
+        {
+          "subMenu": "Eppawala"
+        },
+        {
+          "subMenu": "Habarana"
+        },
+        {
+          "subMenu": "Jalpaiguri"
+        },
+        {
+          "subMenu": "Kolkata"
+        },
+        {
+          "subMenu": "Mumbai"
+        },
+        {
+          "subMenu": "Pune"
+        }
+      ]
+    },
+    {
+      "identifier": "MaritalStatus",
+      "name": "Marital Status",
+      "value": [
+        {
+          "subMenu": "Married"
+        },
+        {
+          "subMenu": "Unmarried"
+        },
+        {
+          "subMenu": "Single"
+        }
+      ]
+    },
+    {
+      "identifier": "Religion",
+      "name": "Religion",
+      "value": [
+        {
+          "subMenu": "Buddhist"
+        },
+        {
+          "subMenu": "Christian"
+        },
+        {
+          "subMenu": "Hindu"
+        },
+        {
+          "subMenu": "Muslim"
+        }
+      ]
+    },
+    {
+      "identifier": "Speaks",
+      "name": "Speaks",
+      "value": [
+        {
+          "subMenu": "English"
+        },
+        {
+          "subMenu": "Hindi"
+        },
+        {
+          "subMenu": "Tamil"
+        },
+        {
+          "subMenu": "Sinhala"
+        }
+      ]
+    },
+    {
+      "identifier": "Education",
+      "name": "Education",
+      "value": [
+        {
+          "subMenu": "BCA"
+        },
+        {
+          "subMenu": "BTECH"
+        },
+        {
+          "subMenu": "MCA"
+        },
+        {
+          "subMenu": "MTECH"
+        }
+      ]
+    }
+  ],
+  "entityType": "org.json.simple.JSONArray",
+  "status": 200,
+  "metadata": {}
+}

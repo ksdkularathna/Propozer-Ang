@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"org/hibernate/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bargadss.Propozal.bean.State" table="State">
+		<id column="Id" name="Id" type="long" >
+		<generator class="increment" />
+		</id>
+		<property column="state" name="state" type="string" />
+		<property column="countryId" name="countryId" type="long" />
+	</class>
+</hibernate-mapping>

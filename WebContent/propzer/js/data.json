@@ -1,0 +1,24 @@
+{
+    "statusType": "OK",
+    "entity": {
+        "records":
+            {
+                "firstName": "Tarun",
+                "lastName": "Samanta",
+                "email": "shanta@bargadss.com",
+                "password": "Shanta21",
+                "city": "Kolkata",
+                "dobYear": "1990",
+                "dobMonth": "March",
+                "dobDate": "13",
+                "workingAs": "S/W Developer",
+                "gender": "Male",
+                "country": "India"
+            }
+
+    },
+    "entityType": "org.json.simple.JSONObject",
+    "metadata": {},
+    "status": 200
+}
+

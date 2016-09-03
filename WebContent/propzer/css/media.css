@@ -1,0 +1,195 @@
+/****
+ *
+ ****/
+@media only screen and (max-width: 1199px){
+	.container {width: 940px; }
+	#mainbanner .searchbox .searchfield {padding: 15px;}
+	#mainbanner .searchbox .searchfield .field {width: 133px; margin-right: 5px;}
+	.contactpage .contact-form {width: 585px;}
+	.afterloginpage .leftpart {width: 555px;}
+	.afterloginpage .leftpart .profilepart .profile {width: 180px;}
+	.managefpage .filter .field {margin-right: 10px; width: 227px;}
+	.managefpage .filter .field select {width: 175px;}
+	.managefpage .manage-content .manage-box {width: 292px; margin: 0 10px 27px 0; }
+	.searchpage .rightpart {width: 715px;}
+	.searchpage .rightpart .rightfilter form .field input[type="text"] {width: 160px;}
+	.searchpage .rightpart .detailsbox .details {width: 228px; margin: 0 15px 23px 0;}
+	.chatpage .chatpart {width: 603px;}
+	.chatpage .chatpart .chatbox {width: 477px;}
+	.chatpage .chatpart .chatbox .chat {width: 355px;}
+	.chatpage .chatpart .chatbox span.time {width: 84px;}
+	.livevideopage .lpart {width: 280px;}
+	.livevideopage .rpart {width: 640px;}
+	.searchoneuser .oneuser .rpart {width: 599px;}
+	.searchoneuser .oneuser .rpart .about li span {width: 140px;}
+	.searchoneuser .oneuser .rpart .about li p {width: 419px;}
+}
+@media only screen and (max-width: 991px){
+	.container {width: 740px;}
+	#mainbanner .topbar {padding: 15px;}
+	#mainbanner .searchbox {padding: 120px 15px 15px;}
+	#mainbanner .searchbox .searchfield {margin-top: 0px;}
+	#mainbanner .searchbox .searchfield .field {width: 116px;}
+	#mainbanner .searchbox .searchfield .bttn {width: 100px;}
+	#footer .footermenu .footerbox {margin: 60px 10px;}
+	.contactpage .contact-form {width: 385px;}
+	.afterloginpage .leftpart, .afterloginpage .rightpart {width: 100%;}
+	.managefpage .filter .field {margin-bottom: 10px;}
+	.managefpage .manage-content .manage-box {width: 226px;}
+	.searchpage .rightpart {width: 515px;}
+	.searchpage .rightpart .rightfilter form .field input[type="text"] {width: 128px;}
+	.searchpage .rightpart .detailsbox .details {margin: 0 15px 23px 0; width: 250px;}
+	.searchpage .rightpart .detailsbox .details:nth-child(2n+2) {margin: 0 0px 23px 0!important;}
+	.searchpage .rightpart .detailsbox .details:nth-child(3n+3) {margin: 0 15px 23px 0;}
+	.chatpage ul.contactpart {width: 283px;}
+	.chatpage ul.contactpart li .details {width: 149px;}
+	.chatpage ul.contactpart li span {width: 70px;}
+	.chatpage .chatpart {width: 443px;}
+	.chatpage .chatpart .chatbox {width: 337px;}
+	.chatpage .chatpart .pic {width: 52px; height: 52px; margin-right: 10px;}
+	.chatpage .chatpart .chatbox .chat {width: 215px;}
+	.chatpage .chatpart .rdir .pic {margin: 0 0 0 10px;}
+	.chatpage .chatpart .controller{width: 365px;}
+	.chatpage .chatpart .controller form input[type="text"] {width: 273px;}
+	.livevideopage .rpart {width: 441px}
+	.searchoneuser .oneuser .rpart {width: 419px; padding-left: 22px;}
+	.searchoneuser .oneuser .rpart .about li span {width: 100px;}
+	.searchoneuser .oneuser .rpart .about li p {width: 296px;}
+
+}
+@media only screen and (max-width: 767px){
+	.container {width: 615px;}
+	#mainbanner .searchbox .searchfield .field {width: 160px; margin-right: 24px;}
+	#mainbanner .searchbox .searchfield .field2 {margin-top: 4px;}
+	#mainbanner .searchbox .searchfield .bttn {margin-top: 39px;}
+	#mainbanner .searchbox .searchfield p.msg {text-align: left; display: none;}
+	#footer .footermenu .footerbox {width: 183px;}
+	.aboutpage .content ul.step li {width: 32%;}
+	.contactpage .contact-form {width: 100%;}
+	.contactpage .contact-details {width: 100%; margin-top: 10px;}
+	.afterloginpage .rightpart .acceptedbox .acceptedlist .accepteduser {margin: 0 14px 15px 0;}
+	.afterloginpage .leftpart .premiumbox a {margin-top: 15px;}
+	.managefpage .manage-content .manage-box {width: 281px;margin: 0 10px 27px 0;}
+	.managefpage .manage-content .manage-box:nth-child(2n+2) {margin-right: 0px!important;}
+	.managefpage .manage-content .manage-box:nth-child(3n+3) {margin: 0 10px 27px 0;}
+	.searchpage .refinesearch {width: 100%;}
+	.searchpage .rightpart {width: 100%; margin-top: 25px;}
+	.searchpage .rightpart .detailsbox .details {width: 300px;}
+	.searchpage .refinesearch li a {background-position: 98% center;}
+	.chatpage ul.contactpart {width: 100%; margin-bottom: 20px;}
+	.chatpage ul.contactpart li .details {width: 166px;}
+	.chatpage .chatpart {float: left; width: 100%;}
+	.chatpage .chatpart .chatbox {width: 509px;}
+	.chatpage .chatpart .chatbox .chat {width: 387px;}
+	.chatpage .chatpart .controller {width: 571px;}
+	.chatpage .chatpart .controller form input[type="text"] {width: 477px;}
+	.livevideopage .lpart {width: 100%; margin-bottom: 20px;}
+	.livevideopage .rpart {float: left; width: 100%;}
+	.searchoneuser .oneuser .lpart {width: 100%;}
+	.searchoneuser .oneuser .rpart {width: 100%; float: left; border-left: none; padding-left: 0; padding-top: 20px;}
+	.searchoneuser .oneuser .rpart .about li span {width: 140px; padding-right: 15px;}
+	.searchoneuser .oneuser .rpart .about li p {width: 433px;}
+
+}
+@media only screen and (max-width:639px){
+	.container {width: 460px;}
+	#content {padding-top: 30px;}
+	.common h1.titlehading {margin-bottom: 25px;}
+	#mainbanner .searchbox h2 {font-size: 60px;}
+	#mainbanner .searchbox .searchfield .field {margin-right: 5px; width: 127px;}
+	h1.title {font-size: 37px;}
+	#started article p {display: block; margin-bottom: 10px;}
+	#started article a {margin-left: 0px; display: inline-block;}
+	#propozer article {padding: 45px 45px 0;}
+	#footer .trusted {width: 100%;}
+	#footer .trusted .giveyou {text-align: center;}
+	#footer .trusted .giveyou li {margin: 5px 0px; width: 100%; padding: 12px 0px; background-position: 31% 50%;}
+	#footer .footermenu .footerbox {width: 100%; margin:20px 0px 20px;}
+	#mobile-menu {background: url(../images/menu-icon.png) no-repeat 50% center; float:right; width:22px; height: 20px; margin: 0px; cursor: pointer;}
+	#navpart .nav {padding:15px 0; position: relative;}
+    #navpart .nav ul {position: absolute; background-color: #EBEBEB; left: 0; top:50px; width: 100%;  display: none; z-index: 2;}
+    #navpart .nav ul li {width: 100%; border-bottom:1px solid #ffffff;}
+    #navpart .nav ul li a{float: left; margin-left: 0px; width: 100%; text-align: left; padding:10px 15px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -o-box-sizing: border-box;}
+    #steps, #members {padding: 30px 0px;}
+	#steps ul.step {margin-top: 0px;}
+	#steps ul.step li {width: 100%; margin-bottom: 10px;}
+	#steps ul.step li .cir {margin: 25px 0px;}
+	.aboutpage .content ul.step li {width: 100%;}
+	#propozer {padding:45px 0;}
+	.afterloginpage .leftpart .profilepart .profile {width: 100%; margin:0px 0px 10px 0px; border-right: none;}
+	.afterloginpage .leftpart .aboutme ul.about {margin-bottom: 15px;}
+	.afterloginpage .leftpart .profilepart .myphotoes {width: 100%;}
+	.managefpage .filter .field {width: 220px;}
+	.managefpage .manage-content .manage-box, .managefpage .manage-content .manage-box:nth-child(3n+3) {width: 100%; margin: 0 0px 27px 0;}
+	.searchpage .rightpart .rightfilter form .field {margin-bottom: 10px;}
+	.searchpage .rightpart .rightfilter form .field input[type="text"] {width: 187px;}
+	.searchpage .rightpart .detailsbox .details {width: 100%; margin: 0 0px 23px 0px!important;}
+	#content.chatpage {padding-top: 20px;}
+	.chatpage .chatpart .chatbox {width: 354px;}
+	.chatpage .chatpart .chatbox .chat {width: 232px;}
+	.chatpage .chatpart .controller {width: 405px;}
+	.chatpage .chatpart .controller form input[type="text"] {width: 312px;}
+	.searchoneuser .oneuser .rpart .about li p {width: 278px;}
+
+	.modal-box {width: 444px; padding: 30px 20px;}
+	.scontrol2.year {width: 124px;}
+	.scontrol2.commonw {margin-left: 10px; width: 130px;}
+	.modal-box .modal-body .otherlogin h3 {background-position: -22px 50%;}
+}
+@media only screen and (max-width:479px){ 
+	.container {width: 300px;}
+	#mainbanner .topbar {padding: 10px 0px; text-align: center;}
+	.logo {width: 100%; margin-bottom: 10px;}
+	.rheader {float: none; display: inline-block; }
+	.rheader a {margin: 0px 10px;}
+	#mainbanner .searchbox .searchfield {padding: 10px;}
+	#mainbanner .searchbox {padding: 0px 0px 10px; margin-top: 20px;}
+	#mainbanner .searchbox h2 {font-size: 30px; line-height: 30px;}
+	#mainbanner .searchbox .searchfield .field {width: 100%; margin: 0px 0px 10px 0px;}
+	#mainbanner .searchbox .searchfield .bttn {margin: 10px 0px 0px 0px;}
+	#footer .trusted .giveyou li {background-position: 19% 50%;}
+	h1.title {font-size: 33px;}
+	#verify .field label.filelabel {width: 100%;}
+	
+	#propozer article {padding: 25px 25px 0;}
+	#headerpart {text-align: center;}
+	.afterloginpage .leftpart .profilepart .myphotoes .photo .photobox {width: 85px; margin-right: 6px;}
+	.afterloginpage .leftpart .aboutme .aboutdetails .incompletebox a {padding: 6px;}
+	.afterloginpage .rightpart .acceptedbox .acceptedlist .accepteduser {margin: 0 6px 15px 0;}
+	.afterloginpage .rightpart .acceptedbox.matches .accepteduser {width: 62px; height: auto;}
+	.common ul.point li {padding: 0 0 40px 30px;}
+	.managefpage .filter .field {width: 100%; margin-right: 0px;}
+	.managefpage .buy-more a {width: 100%;}
+	.searchpage .rightpart .rightfilter form .field {margin-right: 0px;}
+	.managefpage .filter .field select {width: 100%;}
+	.searchpage .rightpart .rightfilter form .field input[type="text"] {width: 272px;}
+
+	.chatpage .chatpart {padding: 15px;}
+	.chatpage .chatpart .chatbox {width: 206px; padding: 10px 10px 6px;}
+	.chatpage .chatpart .chatbox .chat {width: 100%; border-bottom: 1px solid #e2e2e2; padding-bottom: 10px; margin-bottom: 7px;}
+	.chatpage .chatpart .chatbox span.time {width: 100%; text-align: center;}
+	.chatpage .chatpart .chatbox span.time {font-size: 11px;}
+	.chatpage .chatpart .controller {width: 258px;}
+	.chatpage .chatpart .controller form input[type="text"] {width: 165px;}
+
+	.faqpage .faqbox .details li a {background-position: 95% center; padding: 10px 30px 10px 13px;}
+	.faqpage .faqbox .details .box {padding: 13px;}
+
+	.searchoneuser .oneuser .rpart .about li span {width: 100px;}
+	.searchoneuser .oneuser .rpart .about li p {width: 158px;}
+
+	.modal-box {width: 300px;}
+	.modal-box .modal-body .otherlogin h3 {background-position: -92px 50%;}
+	.modal-box .title h1 {line-height: 30px; padding-bottom: 10px;}
+	.modal-box .modal-body .field a.forgot {float: left; width: 100%; padding-bottom: 8px;}
+	.modal-box .modal-body .field p.new {width: 100%;}
+	.modal-box .modal-body .otherlogin a.email {background-position: 30px 50%;}
+	.modal-box .modal-body .otherlogin a.fb {background-position: 34px 50%;}
+	#mainbanner .rheader {background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0; text-align: center; padding: 11px 40px;}
+	#mainbanner .rheader a {float: none;} 
+	#mainbanner .searchbox .searchfield .bttn {width: 100%; margin-top: 20px;}
+	#register .field5, .scontrol2.year {width: 100%;}
+	.scontrol2 {margin-bottom: 15px;}
+	.scontrol2.commonw {width: 100%; margin-left: 0;}
+
+}

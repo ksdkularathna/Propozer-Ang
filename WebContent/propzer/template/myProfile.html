@@ -1,0 +1,457 @@
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://cdn.rawgit.com/tapmodo/Jcrop/master/js/jquery.Jcrop.min.js"></script>
+<div id="main">
+
+	<nav id="navpart">
+		<div class="container">
+			<div class="nav nav-left">
+				<div id="mobile-menu"></div>
+				<ul>
+					<li><a href="after_login_user.html" class="active">My
+							Timeline</a></li>
+					<li><a href="#/editProfile/{{user.email}}">Edit Profile</a></li>
+					<li><a href="#/searchProfile/{{user.email}}">Search
+							Profile</a></li>
+
+					<li><a href="#/demo">Demo</a></li>
+
+					<li><a href="manage_friends.html">Manage Friends</a></li>
+					<li><a href="">Messages</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<section id="content" class="common afterloginpage">
+		<div class="container">
+			<div class="row">
+				<div class="leftpart">
+					<div class="social-icon">
+						<div class="innersocial">
+							<span data-ng-if="user.Lstatus != 'NotDone'"><img
+								ng-src="images/linkedin.png" alt=""></span> <span
+								data-ng-if="user.NICstatus != 'NotDone'"><img
+								ng-src="images/list-icon.png" alt=""></span> <span
+								data-ng-if="user.FBstatus != 'NotDone'"> <img
+								ng-src="images/fb-icon2.png" alt=""></span>
+
+
+						</div>
+					</div>
+					<div class="profilepart">
+						<div class="profile">
+							<div class="pic">
+								<!-- <img ng-src="../../../../images/Tulips.jpg" alt=""> -->
+								<img ng-src="imageUpload/{{user.image}}" alt="">
+								<!-- <img ng-src="data:image/JPEG;base64,{{image}}" alt="">
+								{{user.image}} -->
+
+
+							</div>
+							<div class="clearfix"></div>
+							<div class="details">
+								<h1>{{user.firstName}}</h1>
+								<p>City - {{user.city}}</p>
+							</div>
+							<br>
+
+							<!-- -------------------------------------------------------------------------------------->
+							<!-- <button type="button" class="btn btn-success" data-toggle="modal"
+								data-target=".bs-example-modal-sm">Upload</button> -->
+
+							<!-- -------------------------------------------------------------------------------------->
+							<!-- <div>
+								<input type="file" ng-model="myFile" />
+								<button ng-click="uploadFileNew(myFile)">upload me</button>
+							</div> -->
+							<!-- -------------------------------------------------------------------------------------->
+
+						</div>
+						<div class="myphotoes">
+							<h1>My Photoes</h1>
+							<div class="photo">
+								<div class="photobox">
+									<img src="imageUpload/{{image1}}" alt="">
+								</div>
+								<div class="photobox">
+									<img src="imageUpload/{{image2}}" alt="">
+								</div>
+								<div class="photobox">
+									<img src="imageUpload/{{image3}}" alt="">
+								</div>
+							</div>
+
+							<div class="pull-right linkClass">
+								<a href="#/seeImage/{{user.email}}">View all</a>
+							</div>
+
+						</div>
+					</div>
+					<div class="aboutme">
+						<h1>
+							About Me
+
+							<button type="button" class="btn btn-red" data-toggle="modal"
+								data-target=".bs-example-modal-sm">Upload new image</button>
+
+							<!-- <button type="button" class="btn btn-red">Upload new
+								image</button> -->
+							<a href="#/editProfile/{{user.email}}"></a>
+						</h1>
+						<div class="aboutdetails">
+							<!-- <ul class="about">
+								<li><label>Date of Birth</label>
+									<p>{{user.dobDate}}-{{user.dobMonth}}-{{user.dobYear}}</p>
+								</li>
+								<li><label>Job</label>
+									<p>{{user.careerField}}</p></li>
+								<li><label>Gender</label>
+									<p>{{user.gender}}</p></li>
+								<li><label>Lives in</label>
+									<p>{{user.city}}, {{user.country}}</p></li>
+								<li><label>Credits</label>
+									<p>249</p></li>
+							</ul>
+							<div class="incompletebox">
+								<a href="#">Your Profile is incomplete click here to
+									complete</a>
+							</div> -->
+
+
+							<!-- --------------------------------------------------------------------------------- -->
+
+							<ul class="about">
+								<li><label>User Name</label>
+									<p>{{user.email}}</p></li>
+
+								<li data-ng-if="user.firstName != 'PenDing0o'"><label>First
+										Name</label>
+									<p>{{user.firstName}}</p></li>
+
+								<li data-ng-if="user.lastName != 'PenDing0o'"><label>Last
+										Name</label>
+									<p>{{user.lastName}}</p></li>
+
+								<li><label>I Live in</label>
+									<p>{{user.country}}-{{user.state}}-{{user.city}}</p></li>
+
+
+								<!-- <li data-ng-if="user.forCountry != 'PenDing0o'"><label>Country</label>
+									<p>{{user.country}}</p></li>
+
+								<li data-ng-if="user.forState != 'PenDing0o'"><label>State</label>
+									<p>{{user.state}}</p></li>
+
+								<li data-ng-if="user.forCity != 'PenDing0o'"><label>City</label>
+									<p>{{user.city}}</p></li> -->
+
+								<li data-ng-if="user.gender != 'PenDing0o'"><label>Gender</label>
+									<p>{{user.gender}}</p></li>
+
+								<li data-ng-if="user.height != 'PenDing0o'"><label>Height</label>
+									<p>{{user.height}}</p></li>
+
+								<li><label>Date of Birth</label>
+									<p>{{user.dobDate}}-{{user.dobMonth}}-{{user.dobYear}}</p></li>
+
+								<li data-ng-if="user.relegion != 'PenDing0o'"><label>Religion</label>
+									<p>{{user.relegion}}</p></li>
+
+								<li data-ng-if="user.motherTongue != 'PenDing0o'"><label>Mother
+										Tongue</label>
+
+									<p>{{user.motherTongue}}</p></li>
+
+								<li data-ng-if="user.higestEdu != 'PenDing0o'"><label>Highest
+										Education</label>
+									<p>{{user.higestEdu}}</p></li>
+
+								<li data-ng-if="user.careerField != 'PenDing0o'"><label>Career
+										Field</label>
+									<p>{{user.careerField}}</p></li>
+
+								<li data-ng-if="user.forSalary != 'PenDing0o'"><label>Monthly
+										Salary</label>
+									<p>{{user.monthlySal}}</p></li>
+
+								<li data-ng-if="user.personType != 'PenDing0o'"><label>Myself</label>
+									<p>{{user.personType}}</p></li>
+
+								<li data-ng-if="user.familyBackground != 'PenDing0o'"><label>My
+										Family</label>
+									<p>{{user.familyBackground}}</p></li>
+
+								<li data-ng-if="user.eduAndCareer != 'PenDing0o'"><label>Education
+										& Career</label>
+									<p>{{user.eduAndCareer}}</p></li>
+
+								<li data-ng-if="user.lookingFor != 'PenDing0o'"><label>I
+										am looking for</label>
+									<p>{{user.lookingFor}}</p></li>
+
+								<li data-ng-if="user.facebookUrl != 'PenDing0o'"><label>Your
+										Facebook page link</label>
+									<p>{{user.facebookUrl}}</p></li>
+
+								<li data-ng-if="user.linkdinUrl != 'PenDing0o'"><label>Your
+										Linkedin page link</label>
+									<p>{{user.linkdinUrl}}</p></li>
+
+								<li data-ng-if="user.nicNumber != 'PenDing0o'"><label>National
+										Identity Card Number</label>
+									<p>{{user.nicNumber}}</p> <img
+									style="max-width: 160px; height: 100px; margin-left: 50px"
+									ng-src="imageUpload/{{user.nicImage}}" alt=""></li>
+
+								<li data-ng-if="user.mobileNumber != 'PenDing0o'"><label>Mobile
+										Number</label>
+									<p>{{user.mobileNumber}}</p></li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="premiumbox">
+						<p>Reach up to 10x more people by promoting your ad.</p>
+						<a href="#">Become a Premium Member</a>
+					</div>
+				</div>
+				<div class="rightpart">
+					<div class="accountbox">
+						<h3>Please fill this , it will improve your account</h3>
+						<form>
+							<div ng-show="notDone">
+								<input type="text" name="" value="" class="phold2"
+									ng-show="noDropDown" placeholder="{{pendingData.name}}"
+									ng-model="pendingData.enteredValue"
+									data-ng-if="pendingData.varField!='NICuploadStatus'"> <select
+									class="scontrol2" ng-model="pendingData.enteredValue"
+									data-ng-if="pendingData.varField=='higestEdu'"
+									ng-show="dropDown">
+
+									<option value="">{{pendingData.name}}</option>
+									<option value="MCA">MCA</option>
+									<option value="MTECH">MTECH</option>
+									<option value="BCA">BCA</option>
+									<option value="BTECH">BTECH</option>
+								</select> <select class="scontrol2" ng-model="pendingData.enteredValue"
+									data-ng-if="pendingData.varField=='monthlySal'"
+									ng-show="dropDown">
+
+									<option value="">{{pendingData.name}}</option>
+									<option value="1">0-10000 LKR</option>
+									<option value="2">10001-50000 LKR</option>
+									<option value="3">50001-100000 LKR</option>
+									<option value="4">100001-300000 LKR</option>
+									<option value="5">Above 300001 LKR</option>
+								</select>
+
+								<button class="submit-btn"
+									ng-click="updatePending(user,pendingData)"
+									data-ng-if="pendingData.varField!='NICuploadStatus'">Submit</button>
+
+							</div>
+
+							<div data-ng-if="pendingData.varField=='NICuploadStatus'">
+
+								<button type="button" class="btn btn-red" data-toggle="modal"
+									data-target=".bs-example-modal-sm1" style="margin-left: 29px;">Upload
+									NIC picture</button>
+
+							</div>
+
+							<div ng-show="doneProfile">
+								<h1>Profile Completed !!</h1>
+							</div>
+
+						</form>
+					</div>
+					<div class="acceptedbox">
+						<h3>Accepted List</h3>
+						<div class="acceptedlist">
+							<div class="accepteduser" ng-repeat="frimage in friendImageList">
+
+								<h3>
+									<a
+										href="#/myProfile1/{{frimage.email}}+{{state}}+{{frimage.image}}">
+										<img style="max-width: 100%; height: auto;"
+										ng-src="imageUpload/{{frimage.image}}" alt="">
+
+									</a>
+								</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="acceptedbox">
+						<h3>People Who Viewed Your Profile</h3>
+						<div class="acceptedlist">
+							<div class="accepteduser"
+								ng-repeat="frimage1 in friendImageList1">
+
+								<h3>
+									<a href="#/myProfile1/{{frimage1.email}}+{{state}}"> <img
+										style="max-width: 100%; height: auto;"
+										ng-src="imageUpload/{{frimage1.image}}" alt="">
+
+									</a>
+								</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="acceptedbox matches">
+						<h3>Suggested Matches for you</h3>
+						<div class="acceptedlist">
+							<div class="accepteduser">
+								<img src="images/default-bg.png" alt="">
+							</div>
+							<div class="accepteduser">
+								<img src="images/default-bg.png" alt="">
+							</div>
+							<div class="accepteduser">
+								<img src="images/default-bg.png" alt="">
+							</div>
+							<div class="accepteduser">
+								<img src="images/default-bg.png" alt="">
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="propozer">
+		<div class="container">
+			<div class="propozer-icon">
+				<img src="images/propozer-icon.png" alt="" />
+			</div>
+			<article>Propozer is a unique, innovative and professional
+				matchmaking service provider in Sri Lanka . We offer you the best
+				possible matches of grooms and brides according to your wish through
+				our expanding proprietary network. As a premium matchmaking service
+				provider, our database includes a selected group of reliable
+				candidates who will meet your exact criteria at it best. Propozer
+				will definitely help you to find someone special whom you're
+				compatible with and the one who can build a solid and everlasting
+				relationship with you .</article>
+		</div>
+	</section>
+
+</div>
+
+
+<!-- ********************************pops1************************************************************* -->
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+	aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<!--<h4 class="modal-title" id="mySmallModalLabel">Small modal</h4> -->
+			</div>
+			<div class="modal-body">
+				<!-- 
+				<script>
+					function validate() {
+						return true;
+					}
+				</script>
+ -->
+
+				<!-- action="UploadServlet" -->
+				<form method="post" action="UploadServlet"
+					enctype="multipart/form-data" onsubmit="return validate();">
+
+					<!-- <table accesskey="center">				
+
+						<tr>
+							<td>Upload:</td>
+							<td width='10px'></td>
+							<td><input type="file" name="filecover" value="Upload" /></td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td width='10px'></td>
+							<td><input type="hidden" name="email" value="{{user.email}}" /></td>
+						</tr>
+						
+						<tr>
+							<td align="center"><input type="button" class="btn btn-success">Save</td>
+						</tr>
+					</table> -->
+
+					<div>
+						<input type="hidden" name="email" value="{{user.email}}" />
+
+						<div class="row" align="center">
+							<input type="file" name="filecover" value="Upload" />
+						</div>
+
+						<div class="row" align="center">
+							<input type="radio" name="profile" value="profile" />Upload as
+							Profile picture
+						</div>
+
+						<div class="row" align="center">
+							<button type="submit" class="btn btn-warning">Save</button>
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ********************************pops2************************************************************* -->
+
+<div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog"
+	aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<!--<h4 class="modal-title" id="mySmallModalLabel">Small modal</h4> -->
+			</div>
+			<div class="modal-body">
+
+				<form method="post" action="UploadServlet"
+					enctype="multipart/form-data" onsubmit="return validate();">
+
+					<div>
+						<input type="hidden" name="email" value="{{user.email}}" />
+
+						<div class="row" align="center">
+							<input type="file" name="filecover" value="Upload" />
+						</div>
+
+						<input type="hidden" name="nicPicture" value="nicPicture" />
+
+						<div class="row" align="center">
+							<button type="submit" class="btn btn-warning">Save</button>
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>

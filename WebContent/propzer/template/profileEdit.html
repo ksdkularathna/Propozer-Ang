@@ -1,0 +1,564 @@
+<div id="main">
+
+<nav id="navpart">
+		<div class="container">
+			<div class="nav nav-left">
+				<div id="mobile-menu"></div>
+				<ul>
+					<li><a href="after_login_user.html" class="active">My
+							Timeline</a></li>
+					<li><a href="#/editProfile/{{user.email}}">Edit Profile</a></li>
+					<li><a href="#/searchProfile/{{user.email}}">Search Profile</a></li>
+					
+					<li><a href="#/demo">Demo</a></li>
+					
+					<li><a href="manage_friends.html">Manage Friends</a></li>
+					<li><a href="">Messages</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	</div>
+
+<section id="content" class="common searchpage">
+	<div class="container">
+		<div class="row">
+			<!-- <aside class="refinesearch"></aside> -->
+
+			<h3>Edit Profile</h3>
+			<br>
+
+			<!-- --------------------------------------------------------------------------------- -->
+			<form name="editForm" id="edit" novalidate>
+				<div class="row">
+					<div class="col-sm-2">Email/User Name</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" ng-model="user.email"
+							disabled="true">
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row">
+					<div class="col-sm-2">Password</div>
+					<div class="col-sm-6">
+						<input type="password" class="control" placeholder="Password"
+							name="password" id="password" ng-model="user.password"
+							ng-minlength="6" ng-maxlength="20"
+							ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required>
+							<span
+							ng-show="editForm.password.$error.required && editForm.password.$dirty"
+							style="color: #FF0000">Password is Required</span> <span
+							ng-show="!editForm.password.$error.required && (editForm.password.$error.minlength || editForm.password.$error.maxlength) && editForm.password.$dirty"
+							style="color: #FF0000"> Passwords must be between 6 and 20
+							characters.</span> <span
+							ng-show="!editForm.password.$error.required && !editForm.password.$error.minlength && !editForm.password.$error.maxlength && editForm.password.$error.pattern && editForm.password.$dirty"
+							style="color: #FF0000"> Must contain one lower &amp;
+							uppercase letter, and one non-alpha character (a number or a
+							symbol.)</span>
+					</div>
+				</div>
+				
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.firstName != 'PenDing0o'">
+					<div class="col-sm-2">First Name</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter first name" ng-model="user.firstName"
+							value="{{user.firstName}}" name="firstName" id="firstName"
+							required>
+
+						<p
+							ng-show="editForm.firstName.$invalid && !editForm.firstName.$pristine"
+							class="help-block" style="color: #FF0000">First Name is
+							Required and Only Alphabets allow.</p>
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.lastName != 'PenDing0o'">
+					<div class="col-sm-2">Last Name</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter last name" ng-model="user.lastName"
+							name="lastName" id="lastName" required value="{{user.lastName}}">
+
+						<p
+							ng-show="editForm.lastName.$invalid && !editForm.lastName.$pristine"
+							class="help-block" style="color: #FF0000">Last Name is
+							Required and Only Alphabets allow.</p>
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.forCountry != 'PenDing0o'">
+					<div class="col-sm-2">Country</div>
+					<div class="col-sm-6">
+
+						<select ng-model="user.country" class="form-control"
+							ng-change="getCountryStates()" id="country" required>
+							<option ng-repeat="item in countries"
+								ng-selected="item.country==user.country" value="{{item.id}}">{{item.country}}</option>
+						</select>
+
+						<p
+							ng-show="editForm.country.$invalid && !editForm.country.$pristine"
+							class="help-block" style="color: #FF0000">Country is
+							Required.</p>
+
+					</div>
+
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.forState != 'PenDing0o'">
+					<div class="col-sm-2">State</div>
+					<div class="col-sm-6" ng-show="first">
+
+						<select ng-model="user.state" class="form-control"
+							ng-change="getStateCities()" id="state" required>
+							<option ng-repeat="item in states"
+								ng-selected="item.state==user.state" value="{{item.Id}}">{{item.state}}</option>
+						</select>
+
+						<p ng-show="editForm.state.$invalid && !editForm.state.$pristine"
+							class="help-block" style="color: #FF0000">State is Required.</p>
+
+					</div>
+
+					<div class="col-sm-6" ng-show="second">
+
+						<select ng-model="user.state" class="form-control"
+							ng-change="getStateCities()" id="state" required>
+							<option ng-repeat="item in statesNew"
+								ng-selected="item.state==user.state" value="{{item.Id}}">{{item.state}}</option>
+						</select>
+
+						<p ng-show="editForm.state.$invalid && !editForm.state.$pristine"
+							class="help-block" style="color: #FF0000">State is Required.</p>
+
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.forCity != 'PenDing0o'">
+					<div class="col-sm-2">City</div>
+					<div class="col-sm-6">
+
+						<select ng-model="user.city" class="form-control"
+							ng-change="getStateCities()" id="city" required>
+							<option ng-repeat="item in cities"
+								ng-selected="item.city==user.city" value="{{item.Id}}">{{item.city}}</option>
+						</select>
+
+						<p ng-show="editForm.city.$invalid && !editForm.city.$pristine"
+							class="help-block" style="color: #FF0000">City is Required.</p>
+
+					</div>
+
+					<div class="col-sm-6" ng-show="third">
+
+						<select ng-model="user.city" class="form-control"
+							ng-change="getStateCities(user.city)" id="city">
+							<option ng-repeat="item in citiesNew"
+								ng-selected="item.city==user.city" value="{{item.Id}}">{{item.city}}</option>
+						</select>
+
+						<p ng-show="editForm.city.$invalid && !editForm.city.$pristine"
+							class="help-block" style="color: #FF0000">City is Required.</p>
+
+					</div>
+
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<!-- <div class="row" data-ng-if="user.gender != 'PenDing0o'">
+					<div class="col-sm-2">Gender</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+						placeholder="Enter first name" ng-model="user.gender"
+						value="{{user.gender}}">
+
+						<label class="radio-inline"> <input type="radio"
+							ng-model="user.gender" name="gender" ng-value="Male" id="gender"
+							 class="minimal" ng-checked="user.gender == 'Male'" />
+							Male
+						</label> <label class="radio-inline"> <input type="radio"
+							ng-model="user.gender" name="gender" ng-value="Female"
+							id="gender" class="minimal"
+							ng-checked="user.gender =='Female'" /> Female
+						</label>
+
+						<p
+							ng-show="editForm.gender.$invalid && !editForm.gender.$pristine"
+							class="help-block" style="color: #FF0000">Gender is Required.</p>
+
+					</div>
+				</div> -->
+				
+				<!-- --------------------------------------------------------------------------------- -->
+				
+				<div class="row" data-ng-if="user.gender != 'PenDing0o'">
+					<div class="col-sm-2">Gender</div>
+					<div class="col-sm-6">
+						<select class="scontrol2" ng-model="user.gender" required
+							id="gender" value="{{user.gender}}" ng-selected="user.gender">
+							<option value="Female">Female</option>
+							<option value="Male">Male</option>
+							
+						</select>
+
+						<!-- <p
+							ng-show="editForm.height.$invalid && !editForm.height.$pristine"
+							class="help-block" style="color: #FF0000">height is Required.</p> -->
+
+					</div>
+				</div>
+				
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.height != 'PenDing0o'">
+					<div class="col-sm-2">Height</div>
+					<div class="col-sm-6">
+						<select class="scontrol2" ng-model="user.height" required
+							id="height" value="{{user.height}}" ng-selected="user.height">
+							<option value="60">60cm</option>
+							<option value="61">61cm</option>
+							<option value="62">62cm</option>
+						</select>
+
+						<p
+							ng-show="editForm.height.$invalid && !editForm.height.$pristine"
+							class="help-block" style="color: #FF0000">height is Required.</p>
+
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="field row">
+					<div class="col-sm-2">Date of Birth</div>
+					<!-- <label>Date of Birth</label> -->
+					<div class="col-sm-6">
+						<select class="scontrol2 year" ng-model="user.dobYear"
+							id="dobYear" required value="{{user.dobYear}}"
+							ng-selected="user.dobYear">
+							<option value="1990">1960</option>
+							<option value="1990">1961</option>
+							<option value="1990">1962</option>
+							<option value="1991">1963</option>
+							<option value="1990">1964</option>
+							<option value="1991">1965</option>
+							<option value="1990">1966</option>
+							<option value="1991">1967</option>
+							<option value="1990">1968</option>
+							<option value="1991">1969</option>
+							<option value="1992">1970</option>
+
+							<option value="1990">1971</option>
+							<option value="1991">1972</option>
+							<option value="1992">1973</option>
+							<option value="1990">1974</option>
+							<option value="1991">1975</option>
+							<option value="1992">1976</option>
+							<option value="1990">1977</option>
+							<option value="1990">1978</option>
+							<option value="1991">1979</option>
+							<option value="1980">1980</option>
+
+							<option value="1981">1981</option>
+							<option value="1982">1982</option>
+							<option value="1983">1983</option>
+							<option value="1984">1984</option>
+							<option value="1985">1985</option>
+							<option value="1986">1986</option>
+							<option value="1987">1987</option>
+							<option value="1988">1988</option>
+							<option value="1989">1989</option>
+							<option value="1990">1990</option>
+
+							<option value="1991">1991</option>
+							<option value="1992">1992</option>
+							<option value="1993">1993</option>
+							<option value="1994">1994</option>
+							<option value="1995">1995</option>
+							<option value="1996">1996</option>
+							<option value="1997">1997</option>
+							<option value="1998">1998</option>
+							<option value="1999">1999</option>
+							<option value="2000">2000</option>
+
+						</select>
+						<!-- <select ng-model="dobYear" ng-options="" class="form-control"
+							ng-required="true" id="year" required>
+							<option value="">-- Choose Year --</option>
+						</select> -->
+						<select class="scontrol2 commonw" ng-model="user.dobMonth"
+							value="{{user.dobMonth}}" ng-selected="user.dobMonth"
+							id="dobMonth" required>
+							<option value="January">January</option>
+							<option value="Febuary">Febuary</option>
+							<option value="March">March</option>
+							<option value="April">April</option>
+							<option value="May">May</option>
+							<option value="June">June</option>
+							<option value="July">July</option>
+							<option value="August">August</option>
+							<option value="September">September</option>
+							<option value="October">October</option>
+							<option value="November">November</option>
+							<option value="December">December</option>
+						</select> <select class="scontrol2 commonw" ng-model="user.dobDate"
+							value="{{user.dobDate}}" ng-selected="user.dobDate" id="dobDate"
+							required>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+						</select>
+						
+						<p
+							ng-show="editForm.dobYear.$invalid && !editForm.dobYear.$pristine"
+							class="help-block" style="color: #FF0000">Date is Required.</p>
+						<p
+							ng-show="editForm.dobMonth.$invalid && !editForm.dobMonth.$pristine"
+							class="help-block" style="color: #FF0000">Date is Required.</p>
+						<p
+							ng-show="editForm.dobDate.$invalid && !editForm.dobDate.$pristine"
+							class="help-block" style="color: #FF0000">Date is Required.</p>
+
+					</div>
+					
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.relegion != 'PenDing0o'">
+					<div class="col-sm-2">Relegion</div>
+					<div class="col-sm-6">
+						<select class="scontrol2" ng-model="user.relegion" id="relegion" required
+							value="{{user.relegion}}" ng-selected="user.relegion">
+
+							<option value="Hindu">Hindu</option>
+							<option value="Muslim">Muslim</option>
+							<option value="Christian">Christian</option>
+							<option value="Buddhist">Buddhist</option>
+						</select>
+						
+						<p
+							ng-show="editForm.relegion.$invalid && editForm.relegion.$pristine"
+							class="help-block" style="color: #FF0000">Relegion is
+							Required.</p>
+
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.motherTongue != 'PenDing0o'">
+					<div class="col-sm-2">Mother Tongue</div>
+					<div class="col-sm-6">
+						<select class="scontrol2" ng-model="user.motherTongue" id="motherTongue" required
+							value="{{user.motherTongue}}" ng-selected="user.motherTongue">
+							<option value="English">English</option>
+							<option value="Hindi">Hindi</option>
+							<option value="Tamil">Tamil</option>
+							<option value="Sinhala">Sinhala</option>
+						</select>
+						
+						<p
+							ng-show="editForm.motherTongue.$invalid && !editForm.motherTongue.$pristine"
+							class="help-block" style="color: #FF0000">MotherTongue is
+							Required.</p>
+
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.higestEdu != 'PenDing0o'">
+					<div class="col-sm-2">Highest Education</div>
+					<div class="col-sm-6">
+						<select class="scontrol2" ng-model="user.higestEdu" id="higestEdu" required
+							value="{{user.higestEdu}}" ng-selected="user.higestEdu">
+							<option value="MCA">MCA</option>
+							<option value="MTECH">MTECH</option>
+							<option value="BCA">BCA</option>
+							<option value="BTECH">BTECH</option>
+						</select>
+						
+						<p
+							ng-show="editForm.higestEdu.$invalid && !editForm.higestEdu.$pristine"
+							class="help-block" style="color: #FF0000">Education is
+							Required.</p>
+
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.careerField != 'PenDing0o'">
+					<div class="col-sm-2">Career Field</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="careerField" required
+							placeholder="Enter first name" ng-model="user.careerField"
+							value="{{user.careerField}}">
+							
+							<p
+							ng-show="editForm.careerField.$invalid && !editForm.careerField.$pristine"
+							class="help-block" style="color: #FF0000">Career is
+							Required.</p>
+					</div>
+				</div>
+
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.forSalary!= 'PenDing0o'">
+					<div class="col-sm-2">Monthly Salary</div>
+					<div class="col-sm-6">
+					
+					<select ng-model="user.monthlySal" class="form-control"
+							id="monthlySal" required>
+							<option ng-repeat="item in salaries"
+								ng-selected="item.salaryValue==user.monthlySal" value="{{item.value}}">{{item.salaryValue}}</option>
+						</select>						
+						<p
+							ng-show="editForm.monthlySal.$invalid && !loginForm.monthlySal.$pristine"
+							class="help-block" style="color: #FF0000">Select salary</p>
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+
+				<div class="row" data-ng-if="user.personType != 'PenDing0o'">
+					<div class="col-sm-2">Myself</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="personType" required
+							placeholder="Enter first name" ng-model="user.personType"
+							value="{{user.personType}}">
+							
+							<p
+							ng-show="editForm.personType.$invalid && !loginForm.personType.$pristine"
+							class="help-block" style="color: #FF0000">Please write about yourself</p>
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.personType != 'PenDing0o'">
+					<div class="col-sm-2">My Family</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="familyBackground" required
+							placeholder="Enter first name" ng-model="user.familyBackground"
+							value="{{user.familyBackground}}">
+							
+							<p
+							ng-show="editForm.familyBackground.$invalid && !loginForm.familyBackground.$pristine"
+							class="help-block" style="color: #FF0000">Please write about your family</p>
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.eduAndCareer != 'PenDing0o'">
+					<div class="col-sm-2">Education & Career</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control" id="eduAndCareer" required
+							placeholder="Enter first name" ng-model="user.eduAndCareer"
+							value="{{user.eduAndCareer}}">
+							
+							<p
+							ng-show="editForm.eduAndCareer.$invalid && !loginForm.eduAndCareer.$pristine"
+							class="help-block" style="color: #FF0000">Please write about your Education</p>
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.lookingFor != 'PenDing0o'">
+					<div class="col-sm-2">I am looking for</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter first name" ng-model="user.lookingFor"
+							value="{{user.lookingFor}}">
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.facebookUrl != 'PenDing0o'">
+					<div class="col-sm-2">Your Facebook page link</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter first name" ng-model="user.facebookUrl"
+							value="{{user.facebookUrl}}">
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.linkdinUrl != 'PenDing0o'">
+					<div class="col-sm-2">Your Linkedin page link</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter first name" ng-model="user.linkdinUrl"
+							value="{{user.linkdinUrl}}">
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.nicNumber != 'PenDing0o'">
+					<div class="col-sm-2">National Identity Card Number</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter first name" ng-model="user.nicNumber"
+							value="{{user.nicNumber}}" id="nicNumber" disabled>
+						<!-- 	
+							<p
+							ng-show="editForm.nicNumber.$invalid && !loginForm.nicNumber.$pristine"
+							class="help-block" style="color: #FF0000">Please enter yor NIC number</p> -->
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+				<div class="row" data-ng-if="user.forMobile != 'PenDing0o'">
+					<div class="col-sm-2">Mobile Number</div>
+					<div class="col-sm-6">
+						<input type="text" class="form-control"
+							placeholder="Enter first name" ng-model="user.mobileNumber"
+							value="{{user.mobileNumber}}" id="mobileNumber" required>
+							
+							<p
+							ng-show="editForm.mobileNumber.$invalid && !loginForm.mobileNumber.$pristine"
+							class="help-block" style="color: #FF0000">Please enter yor mobile number</p>
+					</div>
+				</div>
+				<!-- --------------------------------------------------------------------------------- -->
+
+<!-- ng-disabled="editForm.$invalid" -->
+
+				<div class="row" align="center">
+					<button type="button" class="btn btn-primary"
+						 ng-click="editDone(user)" ng-disabled="editForm.$invalid">Update</button>
+				</div>
+
+			</form>
+
+		</div>
+	</div>
+</section>

@@ -1,0 +1,246 @@
+
+<div id="main">
+
+	
+
+	<section id="content" class="common afterloginpage">
+		<div class="container">
+			<div class="row">
+				<div class="leftpart my-profile">
+					
+					<div class="profilepart clearfix">
+						<div class="profile my-profile-left">
+							<div class="pic">
+								<img style="max-width:100%; height:auto;" ng-src="imageUpload/{{image}}" >
+								
+
+
+							</div>
+							<div class="clearfix"></div>
+							<div class="details">
+								<h1>{{MemberDetail.firstName}}</h1>
+								<p>MemberDetail - {{MemberDetail.city}}</p>
+							</div>
+							<br>
+							   <div class="connect-btn">
+        <button style="background:#e2335b; padding:6px 10px; color:#fff; width:100%;"  ng-click="sent(MemberDetail.email)" ng-if="!propozalSent[MemberDetail.email]">Connect</button>
+         </div> 
+   
+         
+        <div class="connect-btn">
+        <div style="background:#249003; padding:6px 10px; color:#fff;" ng-if="propozalSent[MemberDetail.email]" >Propozal Sent</div>
+         </div>
+
+							<!-- -------------------------------------------------------------------------------------->
+							<!-- <button type="button" class="btn btn-success" data-toggle="modal"
+								data-target=".bs-example-modal-sm">Upload</button> -->
+
+							<!-- -------------------------------------------------------------------------------------->
+							<!-- <div>
+								<input type="file" ng-model="myFile" />
+								<button ng-click="uploadFileNew(myFile)">upload me</button>
+							</div> -->
+							<!-- -------------------------------------------------------------------------------------->
+
+						</div>
+						
+							<div class="aboutme my-profile-right">
+						
+						<div class="aboutdetails">
+							<!-- <ul class="about">
+								<li><label>Date of Birth</label>
+									<p>{{MemberDetail.dobDate}}-{{MemberDetail.dobMonth}}-{{MemberDetail.dobYear}}</p>
+								</li>
+								<li><label>Job</label>
+									<p>{{MemberDetail.careerField}}</p></li>
+								<li><label>Gender</label>
+									<p>{{MemberDetail.gender}}</p></li>
+								<li><label>Lives in</label>
+									<p>{{MemberDetail.city}}, {{MemberDetail.country}}</p></li>
+								<li><label>Credits</label>
+									<p>249</p></li>
+							</ul>
+							<div class="incompletebox">
+								<a href="#">Your Profile is incomplete click here to
+									complete</a>
+							</div> -->
+
+
+							<!-- --------------------------------------------------------------------------------- -->
+
+							<ul class="about">
+								<li><label>MemberDetail Name</label>
+									<p>{{MemberDetail.email}}</p></li>
+
+								<li data-ng-if="MemberDetail.firstName != 'PenDing0o'"><label>First
+										Name</label>
+									<p>{{MemberDetail.firstName}}</p></li>
+
+								<li data-ng-if="MemberDetail.lastName != 'PenDing0o'"><label>Last
+										Name</label>
+									<p>{{MemberDetail.lastName}}</p></li>
+
+								<li><label>I Live in</label>
+									<p>{{MemberDetail.country}}-{{MemberDetail.state}}-{{MemberDetail.city}}</p></li>
+
+
+								<!-- <li data-ng-if="MemberDetail.forCountry != 'PenDing0o'"><label>Country</label>
+									<p>{{MemberDetail.country}}</p></li>
+
+								<li data-ng-if="MemberDetail.forState != 'PenDing0o'"><label>State</label>
+									<p>{{MemberDetail.state}}</p></li>
+
+								<li data-ng-if="MemberDetail.forCity != 'PenDing0o'"><label>City</label>
+									<p>{{MemberDetail.city}}</p></li> -->
+
+								<li data-ng-if="MemberDetail.gender != 'PenDing0o'"><label>Gender</label>
+									<p>{{MemberDetail.gender}}</p></li>
+
+								<li data-ng-if="MemberDetail.height != 'PenDing0o'"><label>Height</label>
+									<p>{{MemberDetail.height}}</p></li>
+
+								<li><label>Date of Birth</label>
+									<p>{{MemberDetail.dobDate}}-{{MemberDetail.dobMonth}}-{{MemberDetail.dobYear}}</p></li>
+
+								<li data-ng-if="MemberDetail.relegion != 'PenDing0o'"><label>Religion</label>
+									<p>{{MemberDetail.relegion}}</p></li>
+
+								<li data-ng-if="MemberDetail.motherTongue != 'PenDing0o'"><label>Mother
+										Tongue</label>
+
+									<p>{{MemberDetail.motherTongue}}</p></li>
+
+								<li data-ng-if="MemberDetail.higestEdu != 'PenDing0o'"><label>Highest
+										Education</label>
+									<p>{{MemberDetail.higestEdu}}</p></li>
+
+								<li data-ng-if="MemberDetail.careerField != 'PenDing0o'"><label>Career
+										Field</label>
+									<p>{{MemberDetail.careerField}}</p></li>
+
+								<li data-ng-if="MemberDetail.forSalary != 'PenDing0o'"><label>Monthly
+										Salary</label>
+									<p>{{MemberDetail.monthlySal}}</p></li>
+
+								<li data-ng-if="MemberDetail.personType != 'PenDing0o'"><label>Myself</label>
+									<p>{{MemberDetail.personType}}</p></li>
+
+								<li data-ng-if="MemberDetail.familyBackground != 'PenDing0o'"><label>My
+										Family</label>
+									<p>{{MemberDetail.familyBackground}}</p></li>
+
+								<li data-ng-if="MemberDetail.eduAndCareer != 'PenDing0o'"><label>Education
+										& Career</label>
+									<p>{{MemberDetail.eduAndCareer}}</p></li>
+
+								<li data-ng-if="MemberDetail.lookingFor != 'PenDing0o'"><label>I
+										am looking for</label>
+									<p>{{MemberDetail.lookingFor}}</p></li>
+
+								<li data-ng-if="MemberDetail.facebookUrl != 'PenDing0o'"><label>Your
+										Facebook page link</label>
+									<p>{{MemberDetail.facebookUrl}}</p></li>
+
+								<li data-ng-if="MemberDetail.linkdinUrl != 'PenDing0o'"><label>Your
+										Linkedin page link</label>
+									<p>{{MemberDetail.linkdinUrl}}</p></li>
+
+								<li data-ng-if="MemberDetail.nicNumber != 'PenDing0o'"><label>National
+										Identity Card Number</label>
+									<p>{{MemberDetail.nicNumber}}</p></li>
+
+								<li data-ng-if="MemberDetail.mobileNumber != 'PenDing0o'"><label>Mobile
+										Number</label>
+									<p>{{MemberDetail.mobileNumber}}</p></li>
+
+							</ul>
+						</div>
+						
+						
+					</div>
+				
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</section>
+
+	
+
+</div>
+
+
+<!-- ********************************pops************************************************************* -->
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog"
+	aria-labelledby="mySmallModalLabel">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+				<!--<h4 class="modal-title" id="mySmallModalLabel">Small modal</h4> -->
+			</div>
+			<div class="modal-body">
+				<!-- 
+				<script>
+					function validate() {
+						return true;
+					}
+				</script>
+ -->
+
+				<!-- action="UploadServlet" -->
+				<form method="post" action="UploadServlet"
+					enctype="multipart/form-data" onsubmit="return validate();">
+
+					<!-- <table accesskey="center">				
+
+						<tr>
+							<td>Upload:</td>
+							<td width='10px'></td>
+							<td><input type="file" name="filecover" value="Upload" /></td>
+						</tr>
+						
+						<tr>
+							<td></td>
+							<td width='10px'></td>
+							<td><input type="hidden" name="email" value="{{MemberDetail.email}}" /></td>
+						</tr>
+						
+						<tr>
+							<td align="center"><input type="button" class="btn btn-success">Save</td>
+						</tr>
+					</table> -->
+
+					<div>
+						<input type="hidden" name="email" value="{{MemberDetail.email}}" />
+
+						<div class="row" align="center">
+							<input type="file" name="filecover" value="Upload" />
+						</div>
+
+						<div class="row" align="center">
+							<input type="radio" name="profile" value="profile" />Upload as
+							Profile picture
+						</div>
+
+						<div class="row" align="center">
+							<button type="submit" class="btn btn-warning">Save</button>
+						</div>
+
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+

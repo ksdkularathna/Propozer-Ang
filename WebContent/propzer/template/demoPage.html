@@ -1,0 +1,19 @@
+<section>
+	<div ng-repeat="employee in employees">
+		<div class="action-checkbox">
+			<input id="{{employee.name}}" type="checkbox"
+				value="{{employee.name}}"
+				ng-checked="selection.indexOf(employee.name) > -1"
+				ng-click="toggleSelection(employee.name)" /> <label
+				for="{{employee.name}}"></label> {{employee.name}}
+		</div>
+	</div>
+	<div>
+		<span >Selected
+			Items:<span>
+				<div ng-repeat="name in selection" class="selected-item">
+					{{name}}</div>
+	</div>
+
+</section>
+

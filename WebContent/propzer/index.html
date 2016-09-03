@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sampleapp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Dave Kerr">
+<title>Propozer</title>
+<script type="text/javascript" src="js/html5.js"></script>
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700'
+	rel='stylesheet' type='text/css'>
+<!-- jQuery, from CDN. -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+
+<!-- Boostrap, from CDN. -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+	crossorigin="anonymous">
+
+<!-- ALL CSS -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/colorbox.css">
+<link rel="stylesheet" type="text/css" href="css/media.css">
+<!-- ALL SCRIPT -->
+<!-- <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+<script type="text/javascript" src="js/allStyle.js"></script>
+<!-- Angular, from CDN. -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-animate.min.js"></script>
+
+<!-- Angular Modal Service, the library we're demoing. -->
+<script src="lib/angular-modal-service.js"></script>
+
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script> -->
+<script
+	src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.0.0.js"></script>
+
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+
+<!-- Source for our sample app. -->
+
+
+
+<script src="app/app.js"></script>
+<script src="jsfile/controller.js"></script>
+<script src="jsfile/editProfile.js"></script>
+<script src="jsfile/searchController.js"></script>
+<script src="jsfile/demoController.js"></script>
+<script src="jsfile/profileSearchCtrl.js"></script>
+<script src="jsfile/activationController.js"></script>
+<script src="jsfile/myProfileController.js"></script>
+<script src="jsfile/imageController.js"></script>
+<script src="complex/complexcontroller.js"></script>
+<script src="complex/complexcontroller1.js"></script>
+<script src="jsfile/myProfileCtrl.js"></script>
+<script src="complex/startController.js"></script>
+<script src="lib/angular-route.min.js"></script>
+<script src="jsfile/jquery.colorbox.js"></script>
+<script src="jsfile/notificationControler.js"></script>
+<!--<style>-->
+<!--body {-->
+<!--padding-top: 50px;-->
+<!--}-->
+<!--.starter-template {-->
+<!--padding: 40px 15px;-->
+<!--text-align: center;-->
+<!--}-->
+<!--.sample {-->
+<!--padding: 40px 15px;-->
+<!--}-->
+<!--</style>-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<div id="main">
+		<div ng-controller="HeaderCtrl">
+			<section id="mainbanner"
+				ng-include="'template/partial/header_before_logIn.html'"
+				ng-if="IsVisibleBeforeLogin==true">
+				<!--known as header before logIn   ng-show = "IsVisibleBeforeLogin"     -->
+			</section>
+
+			<!--  <section id="mainbanner"  ng-include="'template/searchAll.html'" ng-show = "result">
+          
+    </section> -->
+
+			<section id="mainbanner" class="header-non-bg"
+				ng-if="IsVisibleAfterLogin==true">
+				<header id="headerpart"
+					ng-include="'template/partial/header_after_logIn.html'">
+					<!--known as header after logIn    ng-show = "IsVisibleAfterLogin"-->
+				</header>
+			</section>
+		</div>
+
+		<!--<div ng-include="'template/partial/index_body.html'">   </div>-->
+		<div ng-view></div>
+	</div>
+	<!-- START FOOTER  PART -->
+	<footer id="footer"
+		ng-include="'template/partial/footer_before_logIn.html'"> </footer>
+	<!-- END FOOTER PART -->
+</body>
+
+<!--<pre ng-show="complexResult">{{complexResult}}</pre>-->
+
+</html>
+<!-- FOR SLIDER -->
+<script type="text/javascript" src="js/owl.carousel.js"></script>
+<script>
+	$(document).ready(function() {
+		var owl = $("#owl-demo");
+		owl.owlCarousel({
+			itemsCustom : [ [ 0, 1 ] ],
+		});
+	});
+</script>

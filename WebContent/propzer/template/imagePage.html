@@ -1,0 +1,54 @@
+<!-- 
+<style>
+.image-gallery {
+	width: 700px;
+	margin: 100px auto;
+}
+
+.image-gallery ul li {
+	list-style: none;
+	margin: 5px;
+	display: inline-block;
+}
+</style> -->
+
+<section>
+
+
+	<div class="container">
+
+
+		<div class="myOtherImages">
+			<h1>My Photos</h1>
+			<div class="photo">
+				<div ng-repeat="image in imageList">
+					<div class="photobox">
+
+						<a class="group1" href="imageUpload/{{image.imagePath}}" > <img
+							src="imageUpload/{{image.imagePath}}" alt="">
+						</a>
+						
+						<div class="row" align="right">
+							<input type="radio" name="profile" value="profile" ng-model="image.models"  ng-confirm-click="Set as profile picture?" ng-click="setProfile(image)"/>Set as
+							Profile picture
+							<!-- <button type="submit" class="btn btn-warning">Save</button> -->
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+	</div>
+</section>
+
+<script>
+	$(document).ready(function() {
+		//Examples of how to assign the Colorbox event to elements
+		$(".group1").colorbox({
+			rel : 'group1'
+		});
+
+	});
+</script>

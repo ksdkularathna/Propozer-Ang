@@ -1,0 +1,30 @@
+{
+  "statusType": "OK",
+  "entity": {
+    "records": [
+      {
+        "Id": 1,
+        "state": "Ampara",
+        "countryId": 2
+      },
+      {
+        "Id": 2,
+        "state": "Anuradhapura",
+        "countryId": 2
+      },
+      {
+        "Id": 3,
+        "state": "West Bengal",
+        "countryId": 1
+      },
+      {
+        "Id": 4,
+        "state": "Maharastra",
+        "countryId": 1
+      }
+    ]
+  },
+  "entityType": "org.json.simple.JSONObject",
+  "status": 200,
+  "metadata": {}
+}

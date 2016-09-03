@@ -1,0 +1,15 @@
+{
+    "statusType": "OK",
+    "entity":
+
+            {
+                "response": "success",
+                "myData_Uid": "43144a1f-ec28-4625-9831-aced0ccda997",
+              "myData_Uname": "Shanta Mahato"
+            }
+
+    ,
+    "entityType": "org.json.simple.JSONObject",
+    "status": 200,
+    "metadata": {}
+}

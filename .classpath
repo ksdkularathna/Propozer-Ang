@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="D:/JarLibs/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/asm.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/ehcache-1.2.3.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/ejb3-persistence.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/hibernate3.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/hibernate-annotations.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/hibernate-commons-annotations.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/hibernate-validator.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jackson-annotations-2.6.3.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jackson-core-2.6.3.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jackson-databind-2.6.3.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/java-json.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jdbc2_0-stdext.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jersey-bundle-1.14.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jersey-media-moxy-2.22.1.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/json-simple-1.1.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jstl.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/jta.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/ojdbc14-10g.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/opencsv-3.7.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/org.springframework.context-3.1.2.release.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/org.springframework.context-3.1.2.release.jar.zip"/>
+	<classpathentry kind="lib" path="D:/JarLibs/quartz-1.8.5.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/quartz-1.8.5.jar.zip"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-aop-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-aspects-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-beans-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-context-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-context-support-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-core-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-expression-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-tx-3.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-tx-4.1.1.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-web-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/spring-webmvc-4.0.5.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/sqljdbc4-2.0.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/xerces-2.6.2.jar"/>
+	<classpathentry kind="lib" path="D:/apache-tomcat-7.0.59/lib/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/JarLibs/mysql-connector-java-5.1.39.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/hibernate-c3p0-3.6.3.final-sources.jar"/>
+	<classpathentry kind="lib" path="D:/JarLibs/javax.mail_1.4.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
