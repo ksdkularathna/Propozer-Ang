@@ -154,7 +154,19 @@ app.controller('profileEditCtrl', ['$scope', '$window', '$routeParams', '$http',
              //$scope.cities = CustomerService.getStateCity($scope.state);
          }
      	
-     	
+         var serviceURL=$scope.endPointURL+"/salary/";
+      	
+      	console.log('**********serviceURL***********');
+      	console.log(serviceURL);
+      	
+      	//$http.get("http://54.169.61.19:8080/Propozal/country/")
+      	$http.get(serviceURL)
+          .success(function(data) {
+        	  $scope.salaries= data.entity.records;
+               console.log($scope.salaries);
+          });
+         
+         
      	var id=$routeParams.userId;
          
          var json={

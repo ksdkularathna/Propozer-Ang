@@ -28,6 +28,77 @@ app.controller('HeaderCtrl', ['$scope', 'ModalService', '$log', '$window', '$htt
     }
 
     ////header chane end////
+    
+  //:::::::::::::::::::::::::::::::::::::::::::StartFriendName::::::::::::
+    $scope.number;
+    $scope.friendNameList=[];
+    userEmail=sessionStorage.UserId;
+     
+      var json={
+              userId:userEmail,
+                 
+             }
+      
+      var serviceURL="http://192.168.0.51:8085/Propozal/friendName/";
+    
+    $http.post(serviceURL,json)
+    .success(function(data) {
+     console.log("-------------");
+
+    console.log(data);
+    
+    
+    if (data.entity) {
+      console.log(data.entity);
+      
+    
+      $scope.number=data.entity.length;
+     for(var i=0;i< data.entity.length;i++)
+      {
+      var obj={};
+      var name=data.entity[i].friend[0]+"  "+data.entity[i].friend[1];
+      obj.name=name;
+      obj.email=data.entity[i].friend[2];
+      $scope.friendNameList.push(obj); 
+      }
+      console.log($scope.friendNameList);
+      
+     } else  {
+       console.log("data not received//null");
+
+      
+            }
+
+    });
+    
+   //:::::::::::::::::::::::::::::::::::::::::::endFriendName:::::::::::::::::
+    
+  //******************************************************************************************//
+	
+	  $scope.notificationPopUp = function() {
+
+	        
+	        $scope.visible=true;
+	        ModalService.showModal({
+	            templateUrl: "template/notification.html",           
+	            controller: "NotificationControler",
+	            inputs: {
+	                title: "A More Complex Example"
+	            }
+	        }).then(function(modal) {
+	            modal.element.modal();
+	            modal.close.then(function(result) {
+
+	             console.log('inside forgot..j;ldf;ljhldflk'+result);
+	           
+	            });
+	        });
+
+	    
+
+	    };
+	    
+	  //******************************************************************************************//
    
     $scope.showComplex = function() {
 
@@ -72,14 +143,16 @@ app.controller('HeaderCtrl', ['$scope', 'ModalService', '$log', '$window', '$htt
                             if($scope.myData_response == "success"){
                                 sessionStorage.UserName= data.entity.firstName;
                                 sessionStorage.UserId= data.entity.userId;
+                                //sessionStorage.Uimage=data.entity.userImage;
                                 //alert(sessionStorage.UserName);
 
                                 //$location.path('/myProfile');
                                 //var url = "http://" + $window.location.host + "/Propozal/index.html";
-                                var url = "http://" + $window.location.host + "/Propozal/index.html";
+                                var url = "http://" + $window.location.host + "/Propozal/index.html#/myProfile";
                                $log.log(url);
                                $window.location.href = url;
                                 
+                               $window.location.reload();
                                // $route.reload();
                                 
                             }else{
@@ -174,7 +247,58 @@ app.controller('HeaderCtrl', ['$scope', 'ModalService', '$log', '$window', '$htt
         $window.location.href = url;
     }
 
-    }]);
+    $scope.hoverIn = function(){
+    	
+   	 $scope.notiList =[];
+   	
+   	$scope.hoverEdit = true;
+   	var userId = sessionStorage.UserId;
+   	
+   	var value1 = {
+   			 userId:userId
+	        };
+   	  var serviceURL=$scope.endPointURL+"/getNotification/";
+   	// console.log("hiiiigfhyhjgsg"+value1);
+   	// $http.post("http://192.168.0.126:8080/Propozal/getNotification/",$scope.value)
+   	  
+   	  $http.post(serviceURL,value1)
+         
+         .success(function(data) {
+           
+            // $scope.activePath = $location.path('/myProfile');
+           //  var url = "http://" + $window.location.host + "/Propozal/index.html";
+             $scope.notiList1=data.entity.records;
+             console.log($scope.notiList1);
+            
+             for(var i=0;i<$scope.notiList1.length;i++)
+          {
+           var obj={};
+           obj.count=$scope.notiList1[i].count;
+           obj.firstName=$scope.notiList1[i].friend[0];
+           obj.lastName=$scope.notiList1[i].friend[1];
+           obj.email=$scope.notiList1[i].friend[2];
+           console.log("hiiii"+ obj.count);
+           console.log("hiiii"+ obj.firstName);
+           $scope.notiList.push(obj);
+           $scope.count=obj.count;
+           
+          }
+             
+             console.log("Success")
+         }).error(function(data) {
+         console.log("fail")
+     })
+   	
+   };
+
+   $scope.hoverOut = function(){
+   	$scope.hoverEdit = true;
+   };
+   
+   
+
+   }]);
+
 
 app.controller('SearchCtrl', ['$scope', 'ModalService', '$log', '$window', '$http', '$location', 
                               function($scope, ModalService, $log, $window, $http, $location) {
@@ -239,8 +363,144 @@ app.controller('SearchCtrl', ['$scope', 'ModalService', '$log', '$window', '$htt
          });
    	 
     }
-    
+	/*app.controller('myProfileController',['$scope','$http','$location','$window','$routeParams','$rootScope', function ($scope, $http, $location, $window, $routeParams,$rootScope) {
+		 
+		//:::::::::::::::::::::::::::::To collect Propozal sent request:::::::::::::// 
+		 var val=[];
+		 var initialVal =$routeParams.email;
+		   val=initialVal.split("+");
+		   email=val[0];
+		   $scope.state=val[1];
+		   //alert(empNo);
+		  console.log("Root Paaram");
+		  console.log(email);
+		  console.log("Root Paaram");
+		  $scope.propozalSent=[]
+		  $scope.propozalSent[email]=val[1];
+		 //:::::::::::::::::::::::::::::To collect Propozal sent request::::::::::::://
+		
+		 
+		 
+		 $scope.value = {
+				 email:email
+	        };
+	   $scope.activePath = null;
+	   $http.post("http://192.168.0.51:8085/Propozal/myprofiledemo/",$scope.value)
+	   //$http.get('js/vv.json')
+	       .success(function (data)
+	       {
+	       	console.log("success");
+	           $scope.MemberDetail = data.entity.records[0];
+	           console.log( $scope.MemberDetail);
+	        
+	         // MemberDetail.email
+	       });
+	   
+	 
+			
+		  }
+	  ]);	*/
+	
+	    
+	    
+	app.controller('myProfileController',['$scope','$http','$location','$window','$routeParams','$rootScope', function ($scope, $http, $location, $window, $routeParams,$rootScope) {
+		 
+		//:::::::::::::::::::::::::::::To collect Propozal sent request:::::::::::::// 
+		 var val=[];
+		 var initialVal =$routeParams.email;
+		   val=initialVal.split("+");
+		   email=val[0];
+		   $scope.state=val[1];
+		   
+		   $scope.isExist=false;
+		   $scope.image=val[2];
+		   //alert(empNo);
+		  console.log("Root Paaram");
+		  console.log(email);
+		  console.log("Root Paaram");
+		  $scope.propozalSent=[]
+		  $scope.propozalSent[email]=val[1];
+		 //:::::::::::::::::::::::::::::To collect Propozal sent request::::::::::::://   
+		  $scope.value = {
+		    email:email
+		        };
+		   $scope.activePath = null;
+		   $http.post("http://192.168.0.51:8085/Propozal/myprofiledemo/",$scope.value)
+		   //$http.get('js/vv.json')
+		       .success(function (data)
+		       {
+		        console.log("success");
+		           $scope.MemberDetail = data.entity.records[0];
+		        
+		         // MemberDetail.email
+		       });
+		   
+		   
+		   
+		   $scope.sent=function(friendEmail){
+		  var userEmail=sessionStorage.UserId;
+		 
+		   $scope.propozalSent[friendEmail]=true;
+		  $scope.postValue = {
+		   useremail : userEmail,
+		   friendemail : friendEmail,
+		   
+		  };
+		  
+		  $http.get("json/endPoint.json")
+		     .success(function(data) {
+		      $scope.endPointURL= data.endPoint;
+		      
+		     console.log("end point");   
+		          console.log($scope.endPointURL);   
+		      console.log("end point");   
+		          
+		      
+		       
+		                
+		     });
+		  
+		  // var serviceURL="http://192.168.0.124:8081/Propozal/friendSearch/";
+		  
+		  $http.post("http://192.168.0.51:8085/Propozal/friendSearch/", $scope.postValue)
+		  .success(function(data) {
+		   //console.log(data);
 
+		   if (data.entity.response == 'success') {
+
+		    $route.reload();
+
+		   } else if (data.entity.response == 'fail') {
+		    alert("Not updated!!");
+		    $route.reload();
+		   }
+
+		  });
+		  
+		  var serviceURL = "http://192.168.0.51:8085/Propozal/friend/";
+		  $http.post(serviceURL, $scope.postValue).success(function(data) {
+		   //console.log(data);
+
+		   if (data.entity.response == 'success') {
+
+		    $route.reload();
+
+		   } else if (data.entity.response == 'fail') {
+		    alert("Not updated!!");
+		    $route.reload();
+		   }
+
+		  });
+
+		  
+		 }
+		   
+		   
+		   
+		   
+
+}]);
+	
 }]);
 
 

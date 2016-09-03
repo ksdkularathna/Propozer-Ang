@@ -31,6 +31,7 @@ app.controller('activationController', ['$scope', 'ModalService', '$log', '$wind
         		 console.log('You are an activated user!!');
         		 alert('You are an activated user!!');
         	 }else{
+        		 alert('You activation time has Expired')
         		 console.log('Fail');
         	 }
          	

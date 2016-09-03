@@ -39,9 +39,7 @@ app.controller('myProfileCtrl', ['$scope', '$log','fileUpload', '$window', '$htt
 	
 	//$compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|file|ftp|blob):|data:image\//);
 	
-    if(sessionStorage.UserId) {
-    	
-    	
+    if(sessionStorage.UserId) {    	
     	
     	console.log(sessionStorage.UserId + "pp");
 //        $scope.IsVisibleBeforeLogin = false;
@@ -118,8 +116,7 @@ app.controller('myProfileCtrl', ['$scope', '$log','fileUpload', '$window', '$htt
                              $scope.image=data1.entity.records[0].image;
                              $scope.image1=data1.entity.records[0].otherImages[0];
                              $scope.image2=data1.entity.records[0].otherImages[1];
-                             $scope.image3=data1.entity.records[0].otherImages[2];
-                             
+                             $scope.image3=data1.entity.records[0].otherImages[2];                             
                              
                          });                            
                  });  
@@ -136,8 +133,130 @@ app.controller('myProfileCtrl', ['$scope', '$log','fileUpload', '$window', '$htt
 	//var uploadUrl="http://1.186.96.69:82/Propozal/uploadedImages";
 	
 	//fileUpload.uploadFileToUrl(file, uploadUrl);
-	
-    $scope.uploadFileNew=function(myFile){
+    
+     //:::::::::::::::::::::::::::::::::::userImage:::::::::::::::::::::
+  //:::::::::::::::::::::Start ImageService:::::::::::::::::::::::::::::::::::::::::::::::::::::::::://        
+    $scope.endPoint; 
+    $scope.friendImageList=[];
+  $scope.state=true;
+  $scope.stateFriendImageList=[];
+    $http.get("json/endPoint.json")
+    .success(function(data) {
+     
+     console.log("This is the end Point");
+     console.log(data.endPoint);
+     $scope.endPoint=data.endPoint;
+     console.log("This is the end Point");
+        
+    
+    var serviceURL=$scope.endPoint+"/friendImage/";
+    
+    var json={
+          userId:sessionStorage.UserId
+         }
+     
+     $http.post(serviceURL,json).
+     success(function(data2) {
+      console.log(data2);
+      if(data2.entity){
+       console.log("data is received");
+       console.log(data2.entity[0]);
+       for(var i=0;i< data2.entity.length;i++)
+       {
+        var obj={};
+        obj.image=data2.entity[i].friend[0];
+        obj.email=data2.entity[i].friend[1];
+          $scope.stateFriendImageList[obj.email]=true;
+        $scope.friendImageList.push(obj);
+        
+       }
+       
+       console.log($scope.friendImageList);
+      }
+      else{
+       console.log("data is null/undefined");
+      }
+      
+     });
+    	         
+    
+    	     
+    	        
+    	      //:::::::::::::::::::::::::::::::::::userImage:::::::::::::::::::::        
+    	        
+    	        var serviceURL=$scope.endPoint+"/userImage/";
+    	        $http.post(serviceURL,json).
+    	        success(function(data3) {
+    	         console.log(data3);
+    	         if(data3.entity){
+    	          console.log("data is received userImage");
+    	          console.log(data3.entity[0]);
+    	          for(var i=0;i< data3.entity.length;i++)
+    	          {
+    	           var obj={};
+    	           obj.image=data3.entity[i].friend[0];
+    	           obj.email=data3.entity[i].friend[1];
+    	           if($scope.stateFriendImageList[obj.email]!=true)
+    	           $scope.friendImageList.push(obj);
+    	           
+    	          }
+    	          
+    	          console.log($scope.friendImageList);
+    	         }
+    	         else{
+    	          console.log("data is null/undefined");
+    	         }
+    	         
+    	        });
+    	        });
+    
+    
+    $http.get("json/endPoint.json")
+    .success(function(data) {
+     
+     console.log("This is the end Point");
+     console.log(data.endPoint);
+     $scope.endPoint=data.endPoint;
+     console.log("This is the end Point");
+        
+    
+  //#########################VIewINg Purpose####################################// 
+     var json={
+             userId:sessionStorage.UserId
+            }
+        
+    $scope.friendImageList1=[];
+    var serviceURL=$scope.endPoint+"/recentViewr/";
+    $http.post(serviceURL,json).
+    success(function(data2) {
+     console.log(data2);
+     if(data2.entity){
+      console.log("data is received");
+      console.log(data2.entity[0]);
+      for(var i=0;i< data2.entity.length;i++)
+      {
+       var obj={};
+       obj.image=data2.entity[i].friend[0];
+       obj.email=data2.entity[i].friend[1];
+       $scope.friendImageList1.push(obj);
+       
+      }
+      
+      console.log($scope.friendImageList);
+   console.log("hiiiiiiiiiiiiii");
+     }
+     else{
+      console.log("data is null/undefined");
+     }
+     
+    }); 
+    }); 
+    	      
+    	    
+    	    
+   
+    	       
+    	      $scope.uploadFileNew=function(myFile){
     	
 	    var serviceURL=$scope.endPointURL+"/image/";	    
 	    
