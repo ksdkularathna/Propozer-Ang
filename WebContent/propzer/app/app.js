@@ -5,6 +5,15 @@ var app = angular.module('sampleapp', ['angularModalService', 'ngAnimate', 'ngRo
          templateUrl: '../index.html',
          controller: 'startController'
      })
+     
+     .when('/myProfile1/:email', {
+    	 templateUrl : 'template/myProfile1.html',
+    	 controller : 'myProfileController'
+     })
+      .when('/viewProfile/:email', {
+    	 templateUrl :  'template/viewProfile.html',
+    	 controller : 'myProfileController1'
+     })
      .when('/myProfile', {
          templateUrl: 'template/myProfile.html',
          controller: 'myProfileCtrl'
