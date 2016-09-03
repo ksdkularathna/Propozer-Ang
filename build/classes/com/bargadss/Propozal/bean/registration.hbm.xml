@@ -3,7 +3,7 @@
 "org/hibernate/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.bargadss.Propozal.bean.Registration" table="Registration">
+	<class name="com.bargadss.Propozal.bean.Registration" table="UserRegistration">
 	
 		<id column="serialNo" name="serialNo" type="long" >
 		<generator class="increment" />
@@ -24,6 +24,7 @@
 		<property column="forState" name="forState" type="string" />
 				
 		<property column="gender" name="gender" type="string" />
+	
 		<property column="height" name="height" type="string" />
 		<property column="dobYear" name="dobYear" type="string" />	
 		
@@ -50,5 +51,14 @@
 		<property column="forMobile" name="forMobile" type="string" />
 		
 		<property column="userStatus" name="status" type="string" />
+				
+		<property column="fbstatus" name="FBstatus" type="string" />
+		<property column="lstatus" name="Lstatus" type="string" />
+		<property column="nicstatus" name="NICstatus" type="string" />
+		
+		<property column="regisDate" name="date" type="java.util.Date" />
+		<property column="maritalStatus" name="maritalStatus" type="string" />		
+		<property column="nicUpStatus" name="NICuploadStatus" type="string" />
+		
 	</class>
 </hibernate-mapping>
