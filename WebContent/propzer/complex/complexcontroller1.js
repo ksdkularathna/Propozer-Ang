@@ -224,12 +224,22 @@ app.factory("CustomerService", ['$filter','$http',
 	  //       password: $scope.password
 	  //   }, 500); // close, but give 500ms for bootstrap to animate
 	  // };
-
+	     
 	      var formModel = {};
 	      $scope.next = function() {
-	          //alert("hi");
+	    	 
+	         
 	          $scope.myvalue = false;
-	          $scope.myvalue2nd = true;
+	       
+	          if($scope.registrationForm.firstName.$valid && $scope.registrationForm.lastName.$valid && $scope.registrationForm.email.$valid && $scope.registrationForm.password.$valid){
+	        	  $scope.myvalue2nd = true;
+	          } else {
+	        	  $scope.myvalue2nd = false;
+	        	  alert("Please Fill the required Fields to Submit");
+	        	  $scope.myvalue = true;
+		      }
+	          
+	         // $scope.myvalue2nd = true;
 	          $scope.myvalue3rd = false;
 	          $scope.myvalue4th = false;
 	          $scope.myvalue5th = false;
@@ -238,6 +248,7 @@ app.factory("CustomerService", ['$filter','$http',
 	          $scope.myvalue8th = false;
 	          //$scope.showModal = true;
 	          //////////for Insert/////
+	          
 	          formModel.firstName = $scope.firstName;
 	          formModel.lastName = $scope.lastName;
 	          formModel.email = $scope.email;
@@ -252,13 +263,27 @@ app.factory("CustomerService", ['$filter','$http',
 	          //     password: $scope.password
 	          // }, 500000); // close, but give 500ms for bootstrap to animate
 
+	      
 	      };
-
-
+	      
+	     
 	      $scope.next2nd = function() {
-	          $scope.myvalue = false;
+	    	//  alert("hiiiii");
+	    	  //alert($scope.height);
+	    	  $scope.myvalue = false;
 	          $scope.myvalue2nd = false;
-	          $scope.myvalue3rd = true;
+	    	  if($scope.registrationForm.gender.$valid && $scope.height != null && $scope.dobMonth != null ){
+	    		 
+	    		  $scope.myvalue3rd = true;
+		         
+		          } else {
+		        	  $scope.myvalue3rd = false;
+		        	  alert("Please Fill the required Fields to Submit");
+		        	  $scope.myvalue2nd = true;
+			      }
+		          
+	          
+	         // $scope.myvalue3rd = true;
 	          $scope.myvalue4th = false;
 	          $scope.myvalue5th = false;
 	          $scope.myvalue6th = false;
@@ -285,9 +310,19 @@ app.factory("CustomerService", ['$filter','$http',
 	      };
 
 	      $scope.next3rd = function() {
+	    	 
 	          $scope.myvalue = false;
 	          $scope.myvalue2nd = false;
 	          $scope.myvalue3rd = false;
+	          /*if($scope.registrationForm.higestEdu.$valid){
+	    		  alert("true");
+	    		  $scope.myvalue4th = true;
+		         
+		          } else {
+		        	  $scope.myvalue4th = false;
+		        	  alert("missing something");
+		        	  $scope.myvalue3rd = true;
+			      }*/
 	          $scope.myvalue4th = true;
 	          $scope.myvalue5th = false;
 	          $scope.myvalue6th = false;
@@ -314,10 +349,21 @@ app.factory("CustomerService", ['$filter','$http',
 	      };
 
 	      $scope.next4th = function() {
+	    	  //alert("hiiiiiiiiiiii");
 	          $scope.myvalue = false;
 	          $scope.myvalue2nd = false;
 	          $scope.myvalue3rd = false;
+	          
 	          $scope.myvalue4th = false;
+	          /*if($scope.registrationForm.higestEdu.$valid){
+	    		  alert("true");
+	    		  $scope.myvalue5th = true;
+		         
+		          } else {
+		        	  $scope.myvalue5th = false;
+		        	  alert("missing something");
+		        	  $scope.myvalue4th = true;
+			      }*/
 	          $scope.myvalue5th = true;
 	          $scope.myvalue6th = false;
 	          $scope.myvalue7th = false;
@@ -343,11 +389,21 @@ app.factory("CustomerService", ['$filter','$http',
 	      };
 
 	      $scope.next5th = function() {
+	    	
 	          $scope.myvalue = false;
 	          $scope.myvalue2nd = false;
 	          $scope.myvalue3rd = false;
 	          $scope.myvalue4th = false;
 	          $scope.myvalue5th = false;
+	          /*if($scope.registrationForm.higestEdu.$valid){
+	    		  alert("true");
+	    		  $scope.myvalue6th = true;
+		         
+		          } else {
+		        	  $scope.myvalue6th = false;
+		        	  alert("missing something");
+		        	  $scope.myvalue5th = true;
+			      }*/
 	          $scope.myvalue6th = true;
 	          $scope.myvalue7th = false;
 	          $scope.myvalue8th = false;
@@ -439,6 +495,7 @@ app.factory("CustomerService", ['$filter','$http',
 	          // $scope.myvalue7th = false;
 	          // $scope.myvalue8th = false;
 	          //////////for Insert/////
+	    	  if($scope.nicNumber!=null){
 	          formModel.firstName = $scope.firstName;
 	          formModel.lastName = $scope.lastName;
 	          formModel.email = $scope.email;
@@ -478,6 +535,7 @@ app.factory("CustomerService", ['$filter','$http',
 	              password: $scope.password,
 	              country: $scope.country,
 	              city: $scope.city,
+	              state: $scope.state,
 	              gender: $scope.gender,
 	              height: $scope.height,
 	              dobYear: $scope.dobYear,
@@ -500,7 +558,11 @@ app.factory("CustomerService", ['$filter','$http',
 	          }, 500); // close, but give 500ms for bootstrap to animate
 
 	          $element.modal('hide');
-	      };
+	    	  }
+	    	  else {
+	    		  alert("please write your NIC number");
+	    		  
+	    	  }};
 
 	  //  This cancel function must use the bootstrap, 'modal' function because
 	  //  the doesn't have the 'data-dismiss' attribute.
